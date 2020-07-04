@@ -1,0 +1,6 @@
+{
+  "name": "{{name}}",
+  "id": "{{dashCase name}}",
+  "type": "{{locationType}}",
+  "parent": "{{parent}}"
+}

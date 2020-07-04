@@ -1,0 +1,24 @@
+{
+  "name": "Khorvaire",
+  "id": "khorvaire",
+  "type": "continent",
+  "map": "../../images/Khorvaire.png",
+  "nations": [
+    "aundair",
+    "the-demon-wastes",
+    "breland",
+    "droaam",
+    "the-eldeen-reaches",
+    "karnath",
+    "the-lhazaar-principalities",
+    "the-mournland",
+    "the-mror-holds",
+    "qbarra",
+    "the-shadow-marches",
+    "the-talenta-plains",
+    "thrane",
+    "valenar",
+    "zilargo"
+  ],
+  "parentLocation": "khorvaire"
+}

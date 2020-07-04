@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-red-900;
+  @apply mt-1;
+  @apply mb-2;
+  font-family: MrJeeves;
+}
+
+h1 {
+  @apply text-5xl;
+  @apply font-extrabold;
+}
+
+h2 {
+  @apply text-3xl;
+  @apply font-extrabold;
+}
+
+h3 {
+  @apply text-2xl;
+  border-bottom: 2px solid #c9ad6a;
+}
+
+h4 {
+  @apply text-xl;
+}
+
+h1+p::first-letter {
+  float: left;
+  font-family: Solberry;
+  @apply text-5xl;
+  @apply text-gray-900;
+  line-height: .8em;
+}
+
+p {
+  font-family: BookSanity;
+  @apply text-base;
+  @apply pb-3;
+}
