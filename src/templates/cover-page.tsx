@@ -11,8 +11,6 @@ import {
   SidebarTopContainer,
 } from "components"
 
-import { MapContainer } from "components/map/MapContainer"
-import { CRS, LatLngTuple, LatLngBoundsExpression } from "leaflet"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 
@@ -25,10 +23,6 @@ type PostProps = {
 type MapImageProps = {
   mapImageFluid?: any
 }
-
-const StyledMapContainer = styled(MapContainer)`
-  height: 400px;
-`
 
 const MapImage = ({ mapImageFluid }: MapImageProps) => {
   if (mapImageFluid) {
@@ -78,14 +72,11 @@ const CoverPage = ({ data }: PostProps) => {
 
   const title: string = post?.frontmatter?.title || " "
   const html: string = post?.html || " "
-  // const center: LatLngTuple = [1000, 1000]
-  // const bounds: LatLngBoundsExpression = [
-  //   [0, 0],
-  //   [3548, 5033],
-  // ]
 
   const countinentsList = continents.map(c => (
-    <HorizontalLinkMenu to={c.fields.slug}>{c.name}</HorizontalLinkMenu>
+    <HorizontalLinkMenu to={c?.fields?.slug ?? ""}>
+      {c?.name}
+    </HorizontalLinkMenu>
   ))
   return (
     <>
@@ -106,14 +97,6 @@ const CoverPage = ({ data }: PostProps) => {
             </div>
             <hr />
             <MapImage mapImageFluid={mapImage} />
-
-            {/* <StyledMapContainer
-              url={mapImage ?? ""}
-              center={center}
-              maxBounds={bounds}
-            >
-              <ImageOverlay url={mapImage ?? ""}></ImageOverlay>
-            </StyledMapContainer> */}
           </SidebarTopContainer>
         </SidebarContainer>
       </TwoColumnLayout>

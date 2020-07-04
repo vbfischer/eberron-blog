@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { ContinentPageQuery, MarkdownRemark } from "types/gatsby-graphql"
+import { ContinentPageQuery } from "types/gatsby-graphql"
 
 import {
   SEO,

@@ -5,8 +5,6 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { Background, Paper } from "components"
 
-import BasicLayout from "./BasicLayout"
-
 type TwoColumnLayoutProps = {
   children: React.ReactNode
 }
