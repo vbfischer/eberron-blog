@@ -78,11 +78,11 @@ const CoverPage = ({ data }: PostProps) => {
 
   const title: string = post?.frontmatter?.title || " "
   const html: string = post?.html || " "
-  const center: LatLngTuple = [1000, 1000]
-  const bounds: LatLngBoundsExpression = [
-    [0, 0],
-    [3548, 5033],
-  ]
+  // const center: LatLngTuple = [1000, 1000]
+  // const bounds: LatLngBoundsExpression = [
+  //   [0, 0],
+  //   [3548, 5033],
+  // ]
 
   const countinentsList = continents.map(c => (
     <HorizontalLinkMenu to={c.fields.slug}>{c.name}</HorizontalLinkMenu>

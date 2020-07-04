@@ -52,11 +52,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    console.log(
-      "creating page for:",
-      node.fields.slug,
-      node.frontmatter.template
-    )
     const template = node.frontmatter.template ?? "blog-post"
 
     createPage({

@@ -72,7 +72,5 @@ module.exports = {
     "MarkdownRemark.frontmatter.continent": "ContinentsJson",
     "ContinentsJson.nations": "NationsJson",
     "WorldJson.geography.continents": "ContinentsJson",
-    "NationsJson.parentLocation": "ContinentsJson",
-    "MarkdownRemark.frontmatter.continent.parentLocation": "WorldJson",
   },
 }

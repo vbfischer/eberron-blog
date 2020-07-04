@@ -17,7 +17,6 @@ type ContinentPageProps = {
 }
 
 const ContinentPage = ({ data }: ContinentPageProps) => {
-  console.log("data", data)
   const frontmatter = data?.markdownRemark?.frontmatter
 
   const html = data?.markdownRemark?.html ?? ""

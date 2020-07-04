@@ -7,4 +7,3 @@
 import "./src/styles/globals.css"
 import "./src/styles/fonts.css"
 import "leaflet/dist/leaflet.css"
-import "leaflet/dist/leaflet-src.js"

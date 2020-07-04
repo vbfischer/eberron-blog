@@ -35,7 +35,6 @@ export const useMapElement = (
 
   useEffect(() => {
     if (mapRef.current !== null && map === null) {
-      console.log("props", props)
       const instance = new LeafletMap(mapRef.current, props)
 
       setMap(instance)
