@@ -7,3 +7,5 @@ export {
   default as SidebarContainer,
   SidebarTopContainer,
 } from "./SideBarContainer"
+
+export { default as Map } from "./Map"

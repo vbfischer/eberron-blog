@@ -339,6 +339,42 @@ export type ContinentsJsonFieldsEnum =
   | 'map___childNationsJson___name'
   | 'map___childNationsJson___type'
   | 'map___childNationsJson___parentLocation'
+  | 'map___childNationsJson___map___sourceInstanceName'
+  | 'map___childNationsJson___map___absolutePath'
+  | 'map___childNationsJson___map___relativePath'
+  | 'map___childNationsJson___map___extension'
+  | 'map___childNationsJson___map___size'
+  | 'map___childNationsJson___map___prettySize'
+  | 'map___childNationsJson___map___modifiedTime'
+  | 'map___childNationsJson___map___accessTime'
+  | 'map___childNationsJson___map___changeTime'
+  | 'map___childNationsJson___map___birthTime'
+  | 'map___childNationsJson___map___root'
+  | 'map___childNationsJson___map___dir'
+  | 'map___childNationsJson___map___base'
+  | 'map___childNationsJson___map___ext'
+  | 'map___childNationsJson___map___name'
+  | 'map___childNationsJson___map___relativeDirectory'
+  | 'map___childNationsJson___map___dev'
+  | 'map___childNationsJson___map___mode'
+  | 'map___childNationsJson___map___nlink'
+  | 'map___childNationsJson___map___uid'
+  | 'map___childNationsJson___map___gid'
+  | 'map___childNationsJson___map___rdev'
+  | 'map___childNationsJson___map___ino'
+  | 'map___childNationsJson___map___atimeMs'
+  | 'map___childNationsJson___map___mtimeMs'
+  | 'map___childNationsJson___map___ctimeMs'
+  | 'map___childNationsJson___map___atime'
+  | 'map___childNationsJson___map___mtime'
+  | 'map___childNationsJson___map___ctime'
+  | 'map___childNationsJson___map___birthtime'
+  | 'map___childNationsJson___map___birthtimeMs'
+  | 'map___childNationsJson___map___blksize'
+  | 'map___childNationsJson___map___blocks'
+  | 'map___childNationsJson___map___publicURL'
+  | 'map___childNationsJson___map___id'
+  | 'map___childNationsJson___map___children'
   | 'map___childContinentsJson___id'
   | 'map___childContinentsJson___parent___id'
   | 'map___childContinentsJson___parent___children'
@@ -399,6 +435,24 @@ export type ContinentsJsonFieldsEnum =
   | 'map___childContinentsJson___nations___type'
   | 'map___childContinentsJson___nations___parentLocation'
   | 'map___childContinentsJson___parentLocation'
+  | 'map___childGeoJson___id'
+  | 'map___childGeoJson___parent___id'
+  | 'map___childGeoJson___parent___children'
+  | 'map___childGeoJson___children'
+  | 'map___childGeoJson___children___id'
+  | 'map___childGeoJson___children___children'
+  | 'map___childGeoJson___internal___content'
+  | 'map___childGeoJson___internal___contentDigest'
+  | 'map___childGeoJson___internal___description'
+  | 'map___childGeoJson___internal___fieldOwners'
+  | 'map___childGeoJson___internal___ignoreType'
+  | 'map___childGeoJson___internal___mediaType'
+  | 'map___childGeoJson___internal___owner'
+  | 'map___childGeoJson___internal___type'
+  | 'map___childGeoJson___type'
+  | 'map___childGeoJson___properties___nation'
+  | 'map___childGeoJson___geometry___type'
+  | 'map___childGeoJson___geometry___coordinates'
   | 'map___childMarkdownRemark___id'
   | 'map___childMarkdownRemark___frontmatter___title'
   | 'map___childMarkdownRemark___frontmatter___template'
@@ -475,6 +529,84 @@ export type ContinentsJsonFieldsEnum =
   | 'nations___name'
   | 'nations___type'
   | 'nations___parentLocation'
+  | 'nations___map___sourceInstanceName'
+  | 'nations___map___absolutePath'
+  | 'nations___map___relativePath'
+  | 'nations___map___extension'
+  | 'nations___map___size'
+  | 'nations___map___prettySize'
+  | 'nations___map___modifiedTime'
+  | 'nations___map___accessTime'
+  | 'nations___map___changeTime'
+  | 'nations___map___birthTime'
+  | 'nations___map___root'
+  | 'nations___map___dir'
+  | 'nations___map___base'
+  | 'nations___map___ext'
+  | 'nations___map___name'
+  | 'nations___map___relativeDirectory'
+  | 'nations___map___dev'
+  | 'nations___map___mode'
+  | 'nations___map___nlink'
+  | 'nations___map___uid'
+  | 'nations___map___gid'
+  | 'nations___map___rdev'
+  | 'nations___map___ino'
+  | 'nations___map___atimeMs'
+  | 'nations___map___mtimeMs'
+  | 'nations___map___ctimeMs'
+  | 'nations___map___atime'
+  | 'nations___map___mtime'
+  | 'nations___map___ctime'
+  | 'nations___map___birthtime'
+  | 'nations___map___birthtimeMs'
+  | 'nations___map___blksize'
+  | 'nations___map___blocks'
+  | 'nations___map___publicURL'
+  | 'nations___map___childImageSharp___id'
+  | 'nations___map___childImageSharp___children'
+  | 'nations___map___id'
+  | 'nations___map___parent___id'
+  | 'nations___map___parent___children'
+  | 'nations___map___children'
+  | 'nations___map___children___id'
+  | 'nations___map___children___children'
+  | 'nations___map___internal___content'
+  | 'nations___map___internal___contentDigest'
+  | 'nations___map___internal___description'
+  | 'nations___map___internal___fieldOwners'
+  | 'nations___map___internal___ignoreType'
+  | 'nations___map___internal___mediaType'
+  | 'nations___map___internal___owner'
+  | 'nations___map___internal___type'
+  | 'nations___map___childWorldJson___id'
+  | 'nations___map___childWorldJson___children'
+  | 'nations___map___childWorldJson___name'
+  | 'nations___map___childNationsJson___id'
+  | 'nations___map___childNationsJson___children'
+  | 'nations___map___childNationsJson___name'
+  | 'nations___map___childNationsJson___type'
+  | 'nations___map___childNationsJson___parentLocation'
+  | 'nations___map___childContinentsJson___id'
+  | 'nations___map___childContinentsJson___children'
+  | 'nations___map___childContinentsJson___name'
+  | 'nations___map___childContinentsJson___type'
+  | 'nations___map___childContinentsJson___nations'
+  | 'nations___map___childContinentsJson___parentLocation'
+  | 'nations___map___childGeoJson___id'
+  | 'nations___map___childGeoJson___children'
+  | 'nations___map___childGeoJson___type'
+  | 'nations___map___childMarkdownRemark___id'
+  | 'nations___map___childMarkdownRemark___excerpt'
+  | 'nations___map___childMarkdownRemark___rawMarkdownBody'
+  | 'nations___map___childMarkdownRemark___fileAbsolutePath'
+  | 'nations___map___childMarkdownRemark___html'
+  | 'nations___map___childMarkdownRemark___htmlAst'
+  | 'nations___map___childMarkdownRemark___excerptAst'
+  | 'nations___map___childMarkdownRemark___headings'
+  | 'nations___map___childMarkdownRemark___timeToRead'
+  | 'nations___map___childMarkdownRemark___tableOfContents'
+  | 'nations___map___childMarkdownRemark___children'
   | 'parentLocation';
 
 export type ContinentsJsonFieldsFilterInput = {
@@ -876,6 +1008,7 @@ export type File = Node & {
   childWorldJson?: Maybe<WorldJson>;
   childNationsJson?: Maybe<NationsJson>;
   childContinentsJson?: Maybe<ContinentsJson>;
+  childGeoJson?: Maybe<GeoJson>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -1261,6 +1394,84 @@ export type FileFieldsEnum =
   | 'childNationsJson___name'
   | 'childNationsJson___type'
   | 'childNationsJson___parentLocation'
+  | 'childNationsJson___map___sourceInstanceName'
+  | 'childNationsJson___map___absolutePath'
+  | 'childNationsJson___map___relativePath'
+  | 'childNationsJson___map___extension'
+  | 'childNationsJson___map___size'
+  | 'childNationsJson___map___prettySize'
+  | 'childNationsJson___map___modifiedTime'
+  | 'childNationsJson___map___accessTime'
+  | 'childNationsJson___map___changeTime'
+  | 'childNationsJson___map___birthTime'
+  | 'childNationsJson___map___root'
+  | 'childNationsJson___map___dir'
+  | 'childNationsJson___map___base'
+  | 'childNationsJson___map___ext'
+  | 'childNationsJson___map___name'
+  | 'childNationsJson___map___relativeDirectory'
+  | 'childNationsJson___map___dev'
+  | 'childNationsJson___map___mode'
+  | 'childNationsJson___map___nlink'
+  | 'childNationsJson___map___uid'
+  | 'childNationsJson___map___gid'
+  | 'childNationsJson___map___rdev'
+  | 'childNationsJson___map___ino'
+  | 'childNationsJson___map___atimeMs'
+  | 'childNationsJson___map___mtimeMs'
+  | 'childNationsJson___map___ctimeMs'
+  | 'childNationsJson___map___atime'
+  | 'childNationsJson___map___mtime'
+  | 'childNationsJson___map___ctime'
+  | 'childNationsJson___map___birthtime'
+  | 'childNationsJson___map___birthtimeMs'
+  | 'childNationsJson___map___blksize'
+  | 'childNationsJson___map___blocks'
+  | 'childNationsJson___map___publicURL'
+  | 'childNationsJson___map___childImageSharp___id'
+  | 'childNationsJson___map___childImageSharp___children'
+  | 'childNationsJson___map___id'
+  | 'childNationsJson___map___parent___id'
+  | 'childNationsJson___map___parent___children'
+  | 'childNationsJson___map___children'
+  | 'childNationsJson___map___children___id'
+  | 'childNationsJson___map___children___children'
+  | 'childNationsJson___map___internal___content'
+  | 'childNationsJson___map___internal___contentDigest'
+  | 'childNationsJson___map___internal___description'
+  | 'childNationsJson___map___internal___fieldOwners'
+  | 'childNationsJson___map___internal___ignoreType'
+  | 'childNationsJson___map___internal___mediaType'
+  | 'childNationsJson___map___internal___owner'
+  | 'childNationsJson___map___internal___type'
+  | 'childNationsJson___map___childWorldJson___id'
+  | 'childNationsJson___map___childWorldJson___children'
+  | 'childNationsJson___map___childWorldJson___name'
+  | 'childNationsJson___map___childNationsJson___id'
+  | 'childNationsJson___map___childNationsJson___children'
+  | 'childNationsJson___map___childNationsJson___name'
+  | 'childNationsJson___map___childNationsJson___type'
+  | 'childNationsJson___map___childNationsJson___parentLocation'
+  | 'childNationsJson___map___childContinentsJson___id'
+  | 'childNationsJson___map___childContinentsJson___children'
+  | 'childNationsJson___map___childContinentsJson___name'
+  | 'childNationsJson___map___childContinentsJson___type'
+  | 'childNationsJson___map___childContinentsJson___nations'
+  | 'childNationsJson___map___childContinentsJson___parentLocation'
+  | 'childNationsJson___map___childGeoJson___id'
+  | 'childNationsJson___map___childGeoJson___children'
+  | 'childNationsJson___map___childGeoJson___type'
+  | 'childNationsJson___map___childMarkdownRemark___id'
+  | 'childNationsJson___map___childMarkdownRemark___excerpt'
+  | 'childNationsJson___map___childMarkdownRemark___rawMarkdownBody'
+  | 'childNationsJson___map___childMarkdownRemark___fileAbsolutePath'
+  | 'childNationsJson___map___childMarkdownRemark___html'
+  | 'childNationsJson___map___childMarkdownRemark___htmlAst'
+  | 'childNationsJson___map___childMarkdownRemark___excerptAst'
+  | 'childNationsJson___map___childMarkdownRemark___headings'
+  | 'childNationsJson___map___childMarkdownRemark___timeToRead'
+  | 'childNationsJson___map___childMarkdownRemark___tableOfContents'
+  | 'childNationsJson___map___childMarkdownRemark___children'
   | 'childContinentsJson___id'
   | 'childContinentsJson___parent___id'
   | 'childContinentsJson___parent___parent___id'
@@ -1366,6 +1577,9 @@ export type FileFieldsEnum =
   | 'childContinentsJson___map___childContinentsJson___type'
   | 'childContinentsJson___map___childContinentsJson___nations'
   | 'childContinentsJson___map___childContinentsJson___parentLocation'
+  | 'childContinentsJson___map___childGeoJson___id'
+  | 'childContinentsJson___map___childGeoJson___children'
+  | 'childContinentsJson___map___childGeoJson___type'
   | 'childContinentsJson___map___childMarkdownRemark___id'
   | 'childContinentsJson___map___childMarkdownRemark___excerpt'
   | 'childContinentsJson___map___childMarkdownRemark___rawMarkdownBody'
@@ -1395,7 +1609,85 @@ export type FileFieldsEnum =
   | 'childContinentsJson___nations___name'
   | 'childContinentsJson___nations___type'
   | 'childContinentsJson___nations___parentLocation'
+  | 'childContinentsJson___nations___map___sourceInstanceName'
+  | 'childContinentsJson___nations___map___absolutePath'
+  | 'childContinentsJson___nations___map___relativePath'
+  | 'childContinentsJson___nations___map___extension'
+  | 'childContinentsJson___nations___map___size'
+  | 'childContinentsJson___nations___map___prettySize'
+  | 'childContinentsJson___nations___map___modifiedTime'
+  | 'childContinentsJson___nations___map___accessTime'
+  | 'childContinentsJson___nations___map___changeTime'
+  | 'childContinentsJson___nations___map___birthTime'
+  | 'childContinentsJson___nations___map___root'
+  | 'childContinentsJson___nations___map___dir'
+  | 'childContinentsJson___nations___map___base'
+  | 'childContinentsJson___nations___map___ext'
+  | 'childContinentsJson___nations___map___name'
+  | 'childContinentsJson___nations___map___relativeDirectory'
+  | 'childContinentsJson___nations___map___dev'
+  | 'childContinentsJson___nations___map___mode'
+  | 'childContinentsJson___nations___map___nlink'
+  | 'childContinentsJson___nations___map___uid'
+  | 'childContinentsJson___nations___map___gid'
+  | 'childContinentsJson___nations___map___rdev'
+  | 'childContinentsJson___nations___map___ino'
+  | 'childContinentsJson___nations___map___atimeMs'
+  | 'childContinentsJson___nations___map___mtimeMs'
+  | 'childContinentsJson___nations___map___ctimeMs'
+  | 'childContinentsJson___nations___map___atime'
+  | 'childContinentsJson___nations___map___mtime'
+  | 'childContinentsJson___nations___map___ctime'
+  | 'childContinentsJson___nations___map___birthtime'
+  | 'childContinentsJson___nations___map___birthtimeMs'
+  | 'childContinentsJson___nations___map___blksize'
+  | 'childContinentsJson___nations___map___blocks'
+  | 'childContinentsJson___nations___map___publicURL'
+  | 'childContinentsJson___nations___map___id'
+  | 'childContinentsJson___nations___map___children'
   | 'childContinentsJson___parentLocation'
+  | 'childGeoJson___id'
+  | 'childGeoJson___parent___id'
+  | 'childGeoJson___parent___parent___id'
+  | 'childGeoJson___parent___parent___children'
+  | 'childGeoJson___parent___children'
+  | 'childGeoJson___parent___children___id'
+  | 'childGeoJson___parent___children___children'
+  | 'childGeoJson___parent___internal___content'
+  | 'childGeoJson___parent___internal___contentDigest'
+  | 'childGeoJson___parent___internal___description'
+  | 'childGeoJson___parent___internal___fieldOwners'
+  | 'childGeoJson___parent___internal___ignoreType'
+  | 'childGeoJson___parent___internal___mediaType'
+  | 'childGeoJson___parent___internal___owner'
+  | 'childGeoJson___parent___internal___type'
+  | 'childGeoJson___children'
+  | 'childGeoJson___children___id'
+  | 'childGeoJson___children___parent___id'
+  | 'childGeoJson___children___parent___children'
+  | 'childGeoJson___children___children'
+  | 'childGeoJson___children___children___id'
+  | 'childGeoJson___children___children___children'
+  | 'childGeoJson___children___internal___content'
+  | 'childGeoJson___children___internal___contentDigest'
+  | 'childGeoJson___children___internal___description'
+  | 'childGeoJson___children___internal___fieldOwners'
+  | 'childGeoJson___children___internal___ignoreType'
+  | 'childGeoJson___children___internal___mediaType'
+  | 'childGeoJson___children___internal___owner'
+  | 'childGeoJson___children___internal___type'
+  | 'childGeoJson___internal___content'
+  | 'childGeoJson___internal___contentDigest'
+  | 'childGeoJson___internal___description'
+  | 'childGeoJson___internal___fieldOwners'
+  | 'childGeoJson___internal___ignoreType'
+  | 'childGeoJson___internal___mediaType'
+  | 'childGeoJson___internal___owner'
+  | 'childGeoJson___internal___type'
+  | 'childGeoJson___type'
+  | 'childGeoJson___properties___nation'
+  | 'childGeoJson___geometry___type'
+  | 'childGeoJson___geometry___coordinates'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___continent___id'
@@ -1585,6 +1877,7 @@ export type FileFilterInput = {
   childWorldJson?: Maybe<WorldJsonFilterInput>;
   childNationsJson?: Maybe<NationsJsonFilterInput>;
   childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
+  childGeoJson?: Maybe<GeoJsonFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -1611,6 +1904,177 @@ export type FloatQueryOperatorInput = {
   lte?: Maybe<Scalars['Float']>;
   in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type GeoJson = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  type?: Maybe<Scalars['String']>;
+  properties?: Maybe<GeoJsonProperties>;
+  geometry?: Maybe<GeoJsonGeometry>;
+};
+
+export type GeoJsonConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GeoJsonEdge>;
+  nodes: Array<GeoJson>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GeoJsonGroupConnection>;
+};
+
+
+export type GeoJsonConnectionDistinctArgs = {
+  field: GeoJsonFieldsEnum;
+};
+
+
+export type GeoJsonConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GeoJsonFieldsEnum;
+};
+
+export type GeoJsonEdge = {
+  next?: Maybe<GeoJson>;
+  node: GeoJson;
+  previous?: Maybe<GeoJson>;
+};
+
+export type GeoJsonFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'type'
+  | 'properties___nation'
+  | 'geometry___type'
+  | 'geometry___coordinates';
+
+export type GeoJsonFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<GeoJsonPropertiesFilterInput>;
+  geometry?: Maybe<GeoJsonGeometryFilterInput>;
+};
+
+export type GeoJsonGeometry = {
+  type?: Maybe<Scalars['String']>;
+  coordinates?: Maybe<Array<Maybe<Array<Maybe<Scalars['Int']>>>>>;
+};
+
+export type GeoJsonGeometryFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  coordinates?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GeoJsonGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GeoJsonEdge>;
+  nodes: Array<GeoJson>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GeoJsonProperties = {
+  nation?: Maybe<Scalars['String']>;
+};
+
+export type GeoJsonPropertiesFilterInput = {
+  nation?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GeoJsonSortInput = {
+  fields?: Maybe<Array<Maybe<GeoJsonFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
 export type ImageCropFocus = 
@@ -2446,6 +2910,9 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___heroImage___childContinentsJson___type'
   | 'frontmatter___heroImage___childContinentsJson___nations'
   | 'frontmatter___heroImage___childContinentsJson___parentLocation'
+  | 'frontmatter___heroImage___childGeoJson___id'
+  | 'frontmatter___heroImage___childGeoJson___children'
+  | 'frontmatter___heroImage___childGeoJson___type'
   | 'frontmatter___heroImage___childMarkdownRemark___id'
   | 'frontmatter___heroImage___childMarkdownRemark___excerpt'
   | 'frontmatter___heroImage___childMarkdownRemark___rawMarkdownBody'
@@ -2539,6 +3006,9 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___mapImage___childContinentsJson___type'
   | 'frontmatter___mapImage___childContinentsJson___nations'
   | 'frontmatter___mapImage___childContinentsJson___parentLocation'
+  | 'frontmatter___mapImage___childGeoJson___id'
+  | 'frontmatter___mapImage___childGeoJson___children'
+  | 'frontmatter___mapImage___childGeoJson___type'
   | 'frontmatter___mapImage___childMarkdownRemark___id'
   | 'frontmatter___mapImage___childMarkdownRemark___excerpt'
   | 'frontmatter___mapImage___childMarkdownRemark___rawMarkdownBody'
@@ -2741,6 +3211,7 @@ export type NationsJson = Node & {
   name?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   parentLocation?: Maybe<Scalars['String']>;
+  map?: Maybe<File>;
 };
 
 export type NationsJsonConnection = {
@@ -2859,7 +3330,327 @@ export type NationsJsonFieldsEnum =
   | 'internal___type'
   | 'name'
   | 'type'
-  | 'parentLocation';
+  | 'parentLocation'
+  | 'map___sourceInstanceName'
+  | 'map___absolutePath'
+  | 'map___relativePath'
+  | 'map___extension'
+  | 'map___size'
+  | 'map___prettySize'
+  | 'map___modifiedTime'
+  | 'map___accessTime'
+  | 'map___changeTime'
+  | 'map___birthTime'
+  | 'map___root'
+  | 'map___dir'
+  | 'map___base'
+  | 'map___ext'
+  | 'map___name'
+  | 'map___relativeDirectory'
+  | 'map___dev'
+  | 'map___mode'
+  | 'map___nlink'
+  | 'map___uid'
+  | 'map___gid'
+  | 'map___rdev'
+  | 'map___ino'
+  | 'map___atimeMs'
+  | 'map___mtimeMs'
+  | 'map___ctimeMs'
+  | 'map___atime'
+  | 'map___mtime'
+  | 'map___ctime'
+  | 'map___birthtime'
+  | 'map___birthtimeMs'
+  | 'map___blksize'
+  | 'map___blocks'
+  | 'map___publicURL'
+  | 'map___childImageSharp___fixed___base64'
+  | 'map___childImageSharp___fixed___tracedSVG'
+  | 'map___childImageSharp___fixed___aspectRatio'
+  | 'map___childImageSharp___fixed___width'
+  | 'map___childImageSharp___fixed___height'
+  | 'map___childImageSharp___fixed___src'
+  | 'map___childImageSharp___fixed___srcSet'
+  | 'map___childImageSharp___fixed___srcWebp'
+  | 'map___childImageSharp___fixed___srcSetWebp'
+  | 'map___childImageSharp___fixed___originalName'
+  | 'map___childImageSharp___resolutions___base64'
+  | 'map___childImageSharp___resolutions___tracedSVG'
+  | 'map___childImageSharp___resolutions___aspectRatio'
+  | 'map___childImageSharp___resolutions___width'
+  | 'map___childImageSharp___resolutions___height'
+  | 'map___childImageSharp___resolutions___src'
+  | 'map___childImageSharp___resolutions___srcSet'
+  | 'map___childImageSharp___resolutions___srcWebp'
+  | 'map___childImageSharp___resolutions___srcSetWebp'
+  | 'map___childImageSharp___resolutions___originalName'
+  | 'map___childImageSharp___fluid___base64'
+  | 'map___childImageSharp___fluid___tracedSVG'
+  | 'map___childImageSharp___fluid___aspectRatio'
+  | 'map___childImageSharp___fluid___src'
+  | 'map___childImageSharp___fluid___srcSet'
+  | 'map___childImageSharp___fluid___srcWebp'
+  | 'map___childImageSharp___fluid___srcSetWebp'
+  | 'map___childImageSharp___fluid___sizes'
+  | 'map___childImageSharp___fluid___originalImg'
+  | 'map___childImageSharp___fluid___originalName'
+  | 'map___childImageSharp___fluid___presentationWidth'
+  | 'map___childImageSharp___fluid___presentationHeight'
+  | 'map___childImageSharp___sizes___base64'
+  | 'map___childImageSharp___sizes___tracedSVG'
+  | 'map___childImageSharp___sizes___aspectRatio'
+  | 'map___childImageSharp___sizes___src'
+  | 'map___childImageSharp___sizes___srcSet'
+  | 'map___childImageSharp___sizes___srcWebp'
+  | 'map___childImageSharp___sizes___srcSetWebp'
+  | 'map___childImageSharp___sizes___sizes'
+  | 'map___childImageSharp___sizes___originalImg'
+  | 'map___childImageSharp___sizes___originalName'
+  | 'map___childImageSharp___sizes___presentationWidth'
+  | 'map___childImageSharp___sizes___presentationHeight'
+  | 'map___childImageSharp___original___width'
+  | 'map___childImageSharp___original___height'
+  | 'map___childImageSharp___original___src'
+  | 'map___childImageSharp___resize___src'
+  | 'map___childImageSharp___resize___tracedSVG'
+  | 'map___childImageSharp___resize___width'
+  | 'map___childImageSharp___resize___height'
+  | 'map___childImageSharp___resize___aspectRatio'
+  | 'map___childImageSharp___resize___originalName'
+  | 'map___childImageSharp___id'
+  | 'map___childImageSharp___parent___id'
+  | 'map___childImageSharp___parent___children'
+  | 'map___childImageSharp___children'
+  | 'map___childImageSharp___children___id'
+  | 'map___childImageSharp___children___children'
+  | 'map___childImageSharp___internal___content'
+  | 'map___childImageSharp___internal___contentDigest'
+  | 'map___childImageSharp___internal___description'
+  | 'map___childImageSharp___internal___fieldOwners'
+  | 'map___childImageSharp___internal___ignoreType'
+  | 'map___childImageSharp___internal___mediaType'
+  | 'map___childImageSharp___internal___owner'
+  | 'map___childImageSharp___internal___type'
+  | 'map___id'
+  | 'map___parent___id'
+  | 'map___parent___parent___id'
+  | 'map___parent___parent___children'
+  | 'map___parent___children'
+  | 'map___parent___children___id'
+  | 'map___parent___children___children'
+  | 'map___parent___internal___content'
+  | 'map___parent___internal___contentDigest'
+  | 'map___parent___internal___description'
+  | 'map___parent___internal___fieldOwners'
+  | 'map___parent___internal___ignoreType'
+  | 'map___parent___internal___mediaType'
+  | 'map___parent___internal___owner'
+  | 'map___parent___internal___type'
+  | 'map___children'
+  | 'map___children___id'
+  | 'map___children___parent___id'
+  | 'map___children___parent___children'
+  | 'map___children___children'
+  | 'map___children___children___id'
+  | 'map___children___children___children'
+  | 'map___children___internal___content'
+  | 'map___children___internal___contentDigest'
+  | 'map___children___internal___description'
+  | 'map___children___internal___fieldOwners'
+  | 'map___children___internal___ignoreType'
+  | 'map___children___internal___mediaType'
+  | 'map___children___internal___owner'
+  | 'map___children___internal___type'
+  | 'map___internal___content'
+  | 'map___internal___contentDigest'
+  | 'map___internal___description'
+  | 'map___internal___fieldOwners'
+  | 'map___internal___ignoreType'
+  | 'map___internal___mediaType'
+  | 'map___internal___owner'
+  | 'map___internal___type'
+  | 'map___childWorldJson___id'
+  | 'map___childWorldJson___parent___id'
+  | 'map___childWorldJson___parent___children'
+  | 'map___childWorldJson___children'
+  | 'map___childWorldJson___children___id'
+  | 'map___childWorldJson___children___children'
+  | 'map___childWorldJson___internal___content'
+  | 'map___childWorldJson___internal___contentDigest'
+  | 'map___childWorldJson___internal___description'
+  | 'map___childWorldJson___internal___fieldOwners'
+  | 'map___childWorldJson___internal___ignoreType'
+  | 'map___childWorldJson___internal___mediaType'
+  | 'map___childWorldJson___internal___owner'
+  | 'map___childWorldJson___internal___type'
+  | 'map___childWorldJson___name'
+  | 'map___childWorldJson___geography___continents'
+  | 'map___childNationsJson___id'
+  | 'map___childNationsJson___parent___id'
+  | 'map___childNationsJson___parent___children'
+  | 'map___childNationsJson___children'
+  | 'map___childNationsJson___children___id'
+  | 'map___childNationsJson___children___children'
+  | 'map___childNationsJson___internal___content'
+  | 'map___childNationsJson___internal___contentDigest'
+  | 'map___childNationsJson___internal___description'
+  | 'map___childNationsJson___internal___fieldOwners'
+  | 'map___childNationsJson___internal___ignoreType'
+  | 'map___childNationsJson___internal___mediaType'
+  | 'map___childNationsJson___internal___owner'
+  | 'map___childNationsJson___internal___type'
+  | 'map___childNationsJson___name'
+  | 'map___childNationsJson___type'
+  | 'map___childNationsJson___parentLocation'
+  | 'map___childNationsJson___map___sourceInstanceName'
+  | 'map___childNationsJson___map___absolutePath'
+  | 'map___childNationsJson___map___relativePath'
+  | 'map___childNationsJson___map___extension'
+  | 'map___childNationsJson___map___size'
+  | 'map___childNationsJson___map___prettySize'
+  | 'map___childNationsJson___map___modifiedTime'
+  | 'map___childNationsJson___map___accessTime'
+  | 'map___childNationsJson___map___changeTime'
+  | 'map___childNationsJson___map___birthTime'
+  | 'map___childNationsJson___map___root'
+  | 'map___childNationsJson___map___dir'
+  | 'map___childNationsJson___map___base'
+  | 'map___childNationsJson___map___ext'
+  | 'map___childNationsJson___map___name'
+  | 'map___childNationsJson___map___relativeDirectory'
+  | 'map___childNationsJson___map___dev'
+  | 'map___childNationsJson___map___mode'
+  | 'map___childNationsJson___map___nlink'
+  | 'map___childNationsJson___map___uid'
+  | 'map___childNationsJson___map___gid'
+  | 'map___childNationsJson___map___rdev'
+  | 'map___childNationsJson___map___ino'
+  | 'map___childNationsJson___map___atimeMs'
+  | 'map___childNationsJson___map___mtimeMs'
+  | 'map___childNationsJson___map___ctimeMs'
+  | 'map___childNationsJson___map___atime'
+  | 'map___childNationsJson___map___mtime'
+  | 'map___childNationsJson___map___ctime'
+  | 'map___childNationsJson___map___birthtime'
+  | 'map___childNationsJson___map___birthtimeMs'
+  | 'map___childNationsJson___map___blksize'
+  | 'map___childNationsJson___map___blocks'
+  | 'map___childNationsJson___map___publicURL'
+  | 'map___childNationsJson___map___id'
+  | 'map___childNationsJson___map___children'
+  | 'map___childContinentsJson___id'
+  | 'map___childContinentsJson___parent___id'
+  | 'map___childContinentsJson___parent___children'
+  | 'map___childContinentsJson___children'
+  | 'map___childContinentsJson___children___id'
+  | 'map___childContinentsJson___children___children'
+  | 'map___childContinentsJson___internal___content'
+  | 'map___childContinentsJson___internal___contentDigest'
+  | 'map___childContinentsJson___internal___description'
+  | 'map___childContinentsJson___internal___fieldOwners'
+  | 'map___childContinentsJson___internal___ignoreType'
+  | 'map___childContinentsJson___internal___mediaType'
+  | 'map___childContinentsJson___internal___owner'
+  | 'map___childContinentsJson___internal___type'
+  | 'map___childContinentsJson___name'
+  | 'map___childContinentsJson___fields___slug'
+  | 'map___childContinentsJson___type'
+  | 'map___childContinentsJson___map___sourceInstanceName'
+  | 'map___childContinentsJson___map___absolutePath'
+  | 'map___childContinentsJson___map___relativePath'
+  | 'map___childContinentsJson___map___extension'
+  | 'map___childContinentsJson___map___size'
+  | 'map___childContinentsJson___map___prettySize'
+  | 'map___childContinentsJson___map___modifiedTime'
+  | 'map___childContinentsJson___map___accessTime'
+  | 'map___childContinentsJson___map___changeTime'
+  | 'map___childContinentsJson___map___birthTime'
+  | 'map___childContinentsJson___map___root'
+  | 'map___childContinentsJson___map___dir'
+  | 'map___childContinentsJson___map___base'
+  | 'map___childContinentsJson___map___ext'
+  | 'map___childContinentsJson___map___name'
+  | 'map___childContinentsJson___map___relativeDirectory'
+  | 'map___childContinentsJson___map___dev'
+  | 'map___childContinentsJson___map___mode'
+  | 'map___childContinentsJson___map___nlink'
+  | 'map___childContinentsJson___map___uid'
+  | 'map___childContinentsJson___map___gid'
+  | 'map___childContinentsJson___map___rdev'
+  | 'map___childContinentsJson___map___ino'
+  | 'map___childContinentsJson___map___atimeMs'
+  | 'map___childContinentsJson___map___mtimeMs'
+  | 'map___childContinentsJson___map___ctimeMs'
+  | 'map___childContinentsJson___map___atime'
+  | 'map___childContinentsJson___map___mtime'
+  | 'map___childContinentsJson___map___ctime'
+  | 'map___childContinentsJson___map___birthtime'
+  | 'map___childContinentsJson___map___birthtimeMs'
+  | 'map___childContinentsJson___map___blksize'
+  | 'map___childContinentsJson___map___blocks'
+  | 'map___childContinentsJson___map___publicURL'
+  | 'map___childContinentsJson___map___id'
+  | 'map___childContinentsJson___map___children'
+  | 'map___childContinentsJson___nations'
+  | 'map___childContinentsJson___nations___id'
+  | 'map___childContinentsJson___nations___children'
+  | 'map___childContinentsJson___nations___name'
+  | 'map___childContinentsJson___nations___type'
+  | 'map___childContinentsJson___nations___parentLocation'
+  | 'map___childContinentsJson___parentLocation'
+  | 'map___childGeoJson___id'
+  | 'map___childGeoJson___parent___id'
+  | 'map___childGeoJson___parent___children'
+  | 'map___childGeoJson___children'
+  | 'map___childGeoJson___children___id'
+  | 'map___childGeoJson___children___children'
+  | 'map___childGeoJson___internal___content'
+  | 'map___childGeoJson___internal___contentDigest'
+  | 'map___childGeoJson___internal___description'
+  | 'map___childGeoJson___internal___fieldOwners'
+  | 'map___childGeoJson___internal___ignoreType'
+  | 'map___childGeoJson___internal___mediaType'
+  | 'map___childGeoJson___internal___owner'
+  | 'map___childGeoJson___internal___type'
+  | 'map___childGeoJson___type'
+  | 'map___childGeoJson___properties___nation'
+  | 'map___childGeoJson___geometry___type'
+  | 'map___childGeoJson___geometry___coordinates'
+  | 'map___childMarkdownRemark___id'
+  | 'map___childMarkdownRemark___frontmatter___title'
+  | 'map___childMarkdownRemark___frontmatter___template'
+  | 'map___childMarkdownRemark___frontmatter___date'
+  | 'map___childMarkdownRemark___frontmatter___inspiration'
+  | 'map___childMarkdownRemark___excerpt'
+  | 'map___childMarkdownRemark___rawMarkdownBody'
+  | 'map___childMarkdownRemark___fileAbsolutePath'
+  | 'map___childMarkdownRemark___fields___slug'
+  | 'map___childMarkdownRemark___html'
+  | 'map___childMarkdownRemark___htmlAst'
+  | 'map___childMarkdownRemark___excerptAst'
+  | 'map___childMarkdownRemark___headings'
+  | 'map___childMarkdownRemark___headings___id'
+  | 'map___childMarkdownRemark___headings___value'
+  | 'map___childMarkdownRemark___headings___depth'
+  | 'map___childMarkdownRemark___timeToRead'
+  | 'map___childMarkdownRemark___tableOfContents'
+  | 'map___childMarkdownRemark___wordCount___paragraphs'
+  | 'map___childMarkdownRemark___wordCount___sentences'
+  | 'map___childMarkdownRemark___wordCount___words'
+  | 'map___childMarkdownRemark___parent___id'
+  | 'map___childMarkdownRemark___parent___children'
+  | 'map___childMarkdownRemark___children'
+  | 'map___childMarkdownRemark___children___id'
+  | 'map___childMarkdownRemark___children___children'
+  | 'map___childMarkdownRemark___internal___content'
+  | 'map___childMarkdownRemark___internal___contentDigest'
+  | 'map___childMarkdownRemark___internal___description'
+  | 'map___childMarkdownRemark___internal___fieldOwners'
+  | 'map___childMarkdownRemark___internal___ignoreType'
+  | 'map___childMarkdownRemark___internal___mediaType'
+  | 'map___childMarkdownRemark___internal___owner'
+  | 'map___childMarkdownRemark___internal___type';
 
 export type NationsJsonFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -2869,6 +3660,7 @@ export type NationsJsonFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   type?: Maybe<StringQueryOperatorInput>;
   parentLocation?: Maybe<StringQueryOperatorInput>;
+  map?: Maybe<FileFilterInput>;
 };
 
 export type NationsJsonFilterListInput = {
@@ -2951,12 +3743,14 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  geoJson?: Maybe<GeoJson>;
+  allGeoJson: GeoJsonConnection;
   continentsJson?: Maybe<ContinentsJson>;
   allContinentsJson: ContinentsJsonConnection;
-  nationsJson?: Maybe<NationsJson>;
-  allNationsJson: NationsJsonConnection;
   worldJson?: Maybe<WorldJson>;
   allWorldJson: WorldJsonConnection;
+  nationsJson?: Maybe<NationsJson>;
+  allNationsJson: NationsJsonConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -3007,6 +3801,7 @@ export type QueryFileArgs = {
   childWorldJson?: Maybe<WorldJsonFilterInput>;
   childNationsJson?: Maybe<NationsJsonFilterInput>;
   childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
+  childGeoJson?: Maybe<GeoJsonFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -3165,6 +3960,25 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryGeoJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  properties?: Maybe<GeoJsonPropertiesFilterInput>;
+  geometry?: Maybe<GeoJsonGeometryFilterInput>;
+};
+
+
+export type QueryAllGeoJsonArgs = {
+  filter?: Maybe<GeoJsonFilterInput>;
+  sort?: Maybe<GeoJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryContinentsJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -3187,25 +4001,6 @@ export type QueryAllContinentsJsonArgs = {
 };
 
 
-export type QueryNationsJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  parentLocation?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllNationsJsonArgs = {
-  filter?: Maybe<NationsJsonFilterInput>;
-  sort?: Maybe<NationsJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
 export type QueryWorldJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -3219,6 +4014,26 @@ export type QueryWorldJsonArgs = {
 export type QueryAllWorldJsonArgs = {
   filter?: Maybe<WorldJsonFilterInput>;
   sort?: Maybe<WorldJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryNationsJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  parentLocation?: Maybe<StringQueryOperatorInput>;
+  map?: Maybe<FileFilterInput>;
+};
+
+
+export type QueryAllNationsJsonArgs = {
+  filter?: Maybe<NationsJsonFilterInput>;
+  sort?: Maybe<NationsJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -4484,12 +5299,12 @@ export type ContinentPageQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { frontmatter?: Maybe<(
       Pick<MarkdownRemarkFrontmatter, 'title'>
-      & { heroImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, mapImage?: Maybe<(
+      & { continent?: Maybe<(
+        Pick<ContinentsJson, 'name'>
+        & { map?: Maybe<{ childImageSharp?: Maybe<{ original?: Maybe<Pick<ImageSharpOriginal, 'height' | 'width' | 'src'>> }> }>, nations?: Maybe<Array<Maybe<Pick<NationsJson, 'name' | 'id'>>>> }
+      )>, heroImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, mapImage?: Maybe<(
         Pick<File, 'id' | 'absolutePath'>
         & { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }
-      )>, continent?: Maybe<(
-        Pick<ContinentsJson, 'name'>
-        & { nations?: Maybe<Array<Maybe<Pick<NationsJson, 'name' | 'id'>>>> }
       )> }
     )> }
   )> };

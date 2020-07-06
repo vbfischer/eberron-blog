@@ -9,6 +9,7 @@ import {
   HeroImage,
   SidebarContainer,
   SidebarTopContainer,
+  Map,
 } from "components"
 import { TwoColumnLayout } from "layouts"
 
@@ -24,7 +25,8 @@ const ContinentPage = ({ data }: ContinentPageProps) => {
   const heroImageFluid = frontmatter?.heroImage?.childImageSharp?.fluid
 
   const nations = frontmatter?.continent?.nations || []
-
+  const map = frontmatter?.continent?.map?.childImageSharp?.original
+  console.log("map", map)
   const nationList = nations.map(n => <li key={n?.id}>{n?.name}</li>)
   return (
     <>
@@ -38,6 +40,7 @@ const ContinentPage = ({ data }: ContinentPageProps) => {
         </CenteredContainer>
         <SidebarContainer>
           <SidebarTopContainer>
+            <Map url={map.src} />
             <h3>Type</h3>
             <p>Continent</p>
             <h3>Nations</h3>
@@ -57,6 +60,17 @@ export const query = graphql`
       html
       frontmatter {
         title
+        continent {
+          map {
+            childImageSharp {
+              original {
+                height
+                width
+                src
+              }
+            }
+          }
+        }
         heroImage {
           childImageSharp {
             fluid(maxWidth: 800) {

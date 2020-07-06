@@ -2,5 +2,6 @@
   "name": "Karnath",
   "id": "karnath",
   "type": "nation",
-  "parentLocation": "khorvaire"
+  "parentLocation": "khorvaire",
+  "map": "../../images/Khorvaire.png"
 }
