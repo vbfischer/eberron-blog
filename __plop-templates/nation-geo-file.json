@@ -1,0 +1,12 @@
+{
+  "type": "Feature",
+  "properties": {
+    "geoType": "nation",
+    "nation": "{{name}}",
+    "popupContent": "{{name}}"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[]]
+  }
+}

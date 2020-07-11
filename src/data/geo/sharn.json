@@ -1,0 +1,18 @@
+{
+  "type": "Feature",
+  "properties": {
+    "geoType": "city",
+    "nation": "Sharn",
+    "popupContent": "Sharn"
+  },
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [960, 794],
+        [1024, 836],
+        [1075, 893]
+      ]
+    ]
+  }
+}

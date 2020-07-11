@@ -1,4 +1,6 @@
 {
   "name": "Aerenal",
-  "id": "aerenal"
+  "id": "aerenal",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

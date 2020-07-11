@@ -1,4 +1,6 @@
 {
   "name": "Sarlona",
-  "id": "sarlona"
+  "id": "sarlona",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

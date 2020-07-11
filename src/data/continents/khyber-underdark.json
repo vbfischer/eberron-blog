@@ -1,4 +1,6 @@
 {
   "name": "Khyber - Underdark",
-  "id": "khyber-underdark"
+  "id": "khyber-underdark",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

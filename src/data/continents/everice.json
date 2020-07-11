@@ -1,4 +1,6 @@
 {
   "name": "Everice",
-  "id": "everice"
+  "id": "everice",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

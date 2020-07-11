@@ -1,4 +1,6 @@
 {
   "name": "Frostfell",
-  "id": "frostfell"
+  "id": "frostfell",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

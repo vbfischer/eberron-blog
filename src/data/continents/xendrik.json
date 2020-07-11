@@ -1,4 +1,6 @@
 {
   "name": "Xen'drik",
-  "id": "xendrik"
+  "id": "xendrik",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

@@ -39,10 +39,10 @@ export type ContinentsJson = Node & {
   children: Array<Node>;
   internal: Internal;
   name?: Maybe<Scalars['String']>;
-  fields?: Maybe<ContinentsJsonFields>;
-  type?: Maybe<Scalars['String']>;
   map?: Maybe<File>;
   nations?: Maybe<Array<Maybe<NationsJson>>>;
+  fields?: Maybe<ContinentsJsonFields>;
+  type?: Maybe<Scalars['String']>;
   parentLocation?: Maybe<Scalars['String']>;
 };
 
@@ -165,8 +165,6 @@ export type ContinentsJsonFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'name'
-  | 'fields___slug'
-  | 'type'
   | 'map___sourceInstanceName'
   | 'map___absolutePath'
   | 'map___relativePath'
@@ -375,6 +373,26 @@ export type ContinentsJsonFieldsEnum =
   | 'map___childNationsJson___map___publicURL'
   | 'map___childNationsJson___map___id'
   | 'map___childNationsJson___map___children'
+  | 'map___childGeoJson___id'
+  | 'map___childGeoJson___parent___id'
+  | 'map___childGeoJson___parent___children'
+  | 'map___childGeoJson___children'
+  | 'map___childGeoJson___children___id'
+  | 'map___childGeoJson___children___children'
+  | 'map___childGeoJson___internal___content'
+  | 'map___childGeoJson___internal___contentDigest'
+  | 'map___childGeoJson___internal___description'
+  | 'map___childGeoJson___internal___fieldOwners'
+  | 'map___childGeoJson___internal___ignoreType'
+  | 'map___childGeoJson___internal___mediaType'
+  | 'map___childGeoJson___internal___owner'
+  | 'map___childGeoJson___internal___type'
+  | 'map___childGeoJson___type'
+  | 'map___childGeoJson___properties___geoType'
+  | 'map___childGeoJson___properties___nation'
+  | 'map___childGeoJson___properties___popupContent'
+  | 'map___childGeoJson___geometry___type'
+  | 'map___childGeoJson___geometry___coordinates'
   | 'map___childContinentsJson___id'
   | 'map___childContinentsJson___parent___id'
   | 'map___childContinentsJson___parent___children'
@@ -390,8 +408,6 @@ export type ContinentsJsonFieldsEnum =
   | 'map___childContinentsJson___internal___owner'
   | 'map___childContinentsJson___internal___type'
   | 'map___childContinentsJson___name'
-  | 'map___childContinentsJson___fields___slug'
-  | 'map___childContinentsJson___type'
   | 'map___childContinentsJson___map___sourceInstanceName'
   | 'map___childContinentsJson___map___absolutePath'
   | 'map___childContinentsJson___map___relativePath'
@@ -434,30 +450,14 @@ export type ContinentsJsonFieldsEnum =
   | 'map___childContinentsJson___nations___name'
   | 'map___childContinentsJson___nations___type'
   | 'map___childContinentsJson___nations___parentLocation'
+  | 'map___childContinentsJson___fields___slug'
+  | 'map___childContinentsJson___type'
   | 'map___childContinentsJson___parentLocation'
-  | 'map___childGeoJson___id'
-  | 'map___childGeoJson___parent___id'
-  | 'map___childGeoJson___parent___children'
-  | 'map___childGeoJson___children'
-  | 'map___childGeoJson___children___id'
-  | 'map___childGeoJson___children___children'
-  | 'map___childGeoJson___internal___content'
-  | 'map___childGeoJson___internal___contentDigest'
-  | 'map___childGeoJson___internal___description'
-  | 'map___childGeoJson___internal___fieldOwners'
-  | 'map___childGeoJson___internal___ignoreType'
-  | 'map___childGeoJson___internal___mediaType'
-  | 'map___childGeoJson___internal___owner'
-  | 'map___childGeoJson___internal___type'
-  | 'map___childGeoJson___type'
-  | 'map___childGeoJson___properties___nation'
-  | 'map___childGeoJson___geometry___type'
-  | 'map___childGeoJson___geometry___coordinates'
   | 'map___childMarkdownRemark___id'
   | 'map___childMarkdownRemark___frontmatter___title'
-  | 'map___childMarkdownRemark___frontmatter___template'
   | 'map___childMarkdownRemark___frontmatter___date'
   | 'map___childMarkdownRemark___frontmatter___inspiration'
+  | 'map___childMarkdownRemark___frontmatter___template'
   | 'map___childMarkdownRemark___excerpt'
   | 'map___childMarkdownRemark___rawMarkdownBody'
   | 'map___childMarkdownRemark___fileAbsolutePath'
@@ -587,15 +587,15 @@ export type ContinentsJsonFieldsEnum =
   | 'nations___map___childNationsJson___name'
   | 'nations___map___childNationsJson___type'
   | 'nations___map___childNationsJson___parentLocation'
-  | 'nations___map___childContinentsJson___id'
-  | 'nations___map___childContinentsJson___children'
-  | 'nations___map___childContinentsJson___name'
-  | 'nations___map___childContinentsJson___type'
-  | 'nations___map___childContinentsJson___nations'
-  | 'nations___map___childContinentsJson___parentLocation'
   | 'nations___map___childGeoJson___id'
   | 'nations___map___childGeoJson___children'
   | 'nations___map___childGeoJson___type'
+  | 'nations___map___childContinentsJson___id'
+  | 'nations___map___childContinentsJson___children'
+  | 'nations___map___childContinentsJson___name'
+  | 'nations___map___childContinentsJson___nations'
+  | 'nations___map___childContinentsJson___type'
+  | 'nations___map___childContinentsJson___parentLocation'
   | 'nations___map___childMarkdownRemark___id'
   | 'nations___map___childMarkdownRemark___excerpt'
   | 'nations___map___childMarkdownRemark___rawMarkdownBody'
@@ -607,6 +607,8 @@ export type ContinentsJsonFieldsEnum =
   | 'nations___map___childMarkdownRemark___timeToRead'
   | 'nations___map___childMarkdownRemark___tableOfContents'
   | 'nations___map___childMarkdownRemark___children'
+  | 'fields___slug'
+  | 'type'
   | 'parentLocation';
 
 export type ContinentsJsonFieldsFilterInput = {
@@ -619,10 +621,10 @@ export type ContinentsJsonFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   name?: Maybe<StringQueryOperatorInput>;
-  fields?: Maybe<ContinentsJsonFieldsFilterInput>;
-  type?: Maybe<StringQueryOperatorInput>;
   map?: Maybe<FileFilterInput>;
   nations?: Maybe<NationsJsonFilterListInput>;
+  fields?: Maybe<ContinentsJsonFieldsFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
   parentLocation?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1007,8 +1009,8 @@ export type File = Node & {
   internal: Internal;
   childWorldJson?: Maybe<WorldJson>;
   childNationsJson?: Maybe<NationsJson>;
-  childContinentsJson?: Maybe<ContinentsJson>;
   childGeoJson?: Maybe<GeoJson>;
+  childContinentsJson?: Maybe<ContinentsJson>;
   childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
@@ -1350,8 +1352,8 @@ export type FileFieldsEnum =
   | 'childWorldJson___geography___continents___id'
   | 'childWorldJson___geography___continents___children'
   | 'childWorldJson___geography___continents___name'
-  | 'childWorldJson___geography___continents___type'
   | 'childWorldJson___geography___continents___nations'
+  | 'childWorldJson___geography___continents___type'
   | 'childWorldJson___geography___continents___parentLocation'
   | 'childNationsJson___id'
   | 'childNationsJson___parent___id'
@@ -1452,15 +1454,15 @@ export type FileFieldsEnum =
   | 'childNationsJson___map___childNationsJson___name'
   | 'childNationsJson___map___childNationsJson___type'
   | 'childNationsJson___map___childNationsJson___parentLocation'
-  | 'childNationsJson___map___childContinentsJson___id'
-  | 'childNationsJson___map___childContinentsJson___children'
-  | 'childNationsJson___map___childContinentsJson___name'
-  | 'childNationsJson___map___childContinentsJson___type'
-  | 'childNationsJson___map___childContinentsJson___nations'
-  | 'childNationsJson___map___childContinentsJson___parentLocation'
   | 'childNationsJson___map___childGeoJson___id'
   | 'childNationsJson___map___childGeoJson___children'
   | 'childNationsJson___map___childGeoJson___type'
+  | 'childNationsJson___map___childContinentsJson___id'
+  | 'childNationsJson___map___childContinentsJson___children'
+  | 'childNationsJson___map___childContinentsJson___name'
+  | 'childNationsJson___map___childContinentsJson___nations'
+  | 'childNationsJson___map___childContinentsJson___type'
+  | 'childNationsJson___map___childContinentsJson___parentLocation'
   | 'childNationsJson___map___childMarkdownRemark___id'
   | 'childNationsJson___map___childMarkdownRemark___excerpt'
   | 'childNationsJson___map___childMarkdownRemark___rawMarkdownBody'
@@ -1472,6 +1474,50 @@ export type FileFieldsEnum =
   | 'childNationsJson___map___childMarkdownRemark___timeToRead'
   | 'childNationsJson___map___childMarkdownRemark___tableOfContents'
   | 'childNationsJson___map___childMarkdownRemark___children'
+  | 'childGeoJson___id'
+  | 'childGeoJson___parent___id'
+  | 'childGeoJson___parent___parent___id'
+  | 'childGeoJson___parent___parent___children'
+  | 'childGeoJson___parent___children'
+  | 'childGeoJson___parent___children___id'
+  | 'childGeoJson___parent___children___children'
+  | 'childGeoJson___parent___internal___content'
+  | 'childGeoJson___parent___internal___contentDigest'
+  | 'childGeoJson___parent___internal___description'
+  | 'childGeoJson___parent___internal___fieldOwners'
+  | 'childGeoJson___parent___internal___ignoreType'
+  | 'childGeoJson___parent___internal___mediaType'
+  | 'childGeoJson___parent___internal___owner'
+  | 'childGeoJson___parent___internal___type'
+  | 'childGeoJson___children'
+  | 'childGeoJson___children___id'
+  | 'childGeoJson___children___parent___id'
+  | 'childGeoJson___children___parent___children'
+  | 'childGeoJson___children___children'
+  | 'childGeoJson___children___children___id'
+  | 'childGeoJson___children___children___children'
+  | 'childGeoJson___children___internal___content'
+  | 'childGeoJson___children___internal___contentDigest'
+  | 'childGeoJson___children___internal___description'
+  | 'childGeoJson___children___internal___fieldOwners'
+  | 'childGeoJson___children___internal___ignoreType'
+  | 'childGeoJson___children___internal___mediaType'
+  | 'childGeoJson___children___internal___owner'
+  | 'childGeoJson___children___internal___type'
+  | 'childGeoJson___internal___content'
+  | 'childGeoJson___internal___contentDigest'
+  | 'childGeoJson___internal___description'
+  | 'childGeoJson___internal___fieldOwners'
+  | 'childGeoJson___internal___ignoreType'
+  | 'childGeoJson___internal___mediaType'
+  | 'childGeoJson___internal___owner'
+  | 'childGeoJson___internal___type'
+  | 'childGeoJson___type'
+  | 'childGeoJson___properties___geoType'
+  | 'childGeoJson___properties___nation'
+  | 'childGeoJson___properties___popupContent'
+  | 'childGeoJson___geometry___type'
+  | 'childGeoJson___geometry___coordinates'
   | 'childContinentsJson___id'
   | 'childContinentsJson___parent___id'
   | 'childContinentsJson___parent___parent___id'
@@ -1511,8 +1557,6 @@ export type FileFieldsEnum =
   | 'childContinentsJson___internal___owner'
   | 'childContinentsJson___internal___type'
   | 'childContinentsJson___name'
-  | 'childContinentsJson___fields___slug'
-  | 'childContinentsJson___type'
   | 'childContinentsJson___map___sourceInstanceName'
   | 'childContinentsJson___map___absolutePath'
   | 'childContinentsJson___map___relativePath'
@@ -1571,15 +1615,15 @@ export type FileFieldsEnum =
   | 'childContinentsJson___map___childNationsJson___name'
   | 'childContinentsJson___map___childNationsJson___type'
   | 'childContinentsJson___map___childNationsJson___parentLocation'
-  | 'childContinentsJson___map___childContinentsJson___id'
-  | 'childContinentsJson___map___childContinentsJson___children'
-  | 'childContinentsJson___map___childContinentsJson___name'
-  | 'childContinentsJson___map___childContinentsJson___type'
-  | 'childContinentsJson___map___childContinentsJson___nations'
-  | 'childContinentsJson___map___childContinentsJson___parentLocation'
   | 'childContinentsJson___map___childGeoJson___id'
   | 'childContinentsJson___map___childGeoJson___children'
   | 'childContinentsJson___map___childGeoJson___type'
+  | 'childContinentsJson___map___childContinentsJson___id'
+  | 'childContinentsJson___map___childContinentsJson___children'
+  | 'childContinentsJson___map___childContinentsJson___name'
+  | 'childContinentsJson___map___childContinentsJson___nations'
+  | 'childContinentsJson___map___childContinentsJson___type'
+  | 'childContinentsJson___map___childContinentsJson___parentLocation'
   | 'childContinentsJson___map___childMarkdownRemark___id'
   | 'childContinentsJson___map___childMarkdownRemark___excerpt'
   | 'childContinentsJson___map___childMarkdownRemark___rawMarkdownBody'
@@ -1645,63 +1689,16 @@ export type FileFieldsEnum =
   | 'childContinentsJson___nations___map___publicURL'
   | 'childContinentsJson___nations___map___id'
   | 'childContinentsJson___nations___map___children'
+  | 'childContinentsJson___fields___slug'
+  | 'childContinentsJson___type'
   | 'childContinentsJson___parentLocation'
-  | 'childGeoJson___id'
-  | 'childGeoJson___parent___id'
-  | 'childGeoJson___parent___parent___id'
-  | 'childGeoJson___parent___parent___children'
-  | 'childGeoJson___parent___children'
-  | 'childGeoJson___parent___children___id'
-  | 'childGeoJson___parent___children___children'
-  | 'childGeoJson___parent___internal___content'
-  | 'childGeoJson___parent___internal___contentDigest'
-  | 'childGeoJson___parent___internal___description'
-  | 'childGeoJson___parent___internal___fieldOwners'
-  | 'childGeoJson___parent___internal___ignoreType'
-  | 'childGeoJson___parent___internal___mediaType'
-  | 'childGeoJson___parent___internal___owner'
-  | 'childGeoJson___parent___internal___type'
-  | 'childGeoJson___children'
-  | 'childGeoJson___children___id'
-  | 'childGeoJson___children___parent___id'
-  | 'childGeoJson___children___parent___children'
-  | 'childGeoJson___children___children'
-  | 'childGeoJson___children___children___id'
-  | 'childGeoJson___children___children___children'
-  | 'childGeoJson___children___internal___content'
-  | 'childGeoJson___children___internal___contentDigest'
-  | 'childGeoJson___children___internal___description'
-  | 'childGeoJson___children___internal___fieldOwners'
-  | 'childGeoJson___children___internal___ignoreType'
-  | 'childGeoJson___children___internal___mediaType'
-  | 'childGeoJson___children___internal___owner'
-  | 'childGeoJson___children___internal___type'
-  | 'childGeoJson___internal___content'
-  | 'childGeoJson___internal___contentDigest'
-  | 'childGeoJson___internal___description'
-  | 'childGeoJson___internal___fieldOwners'
-  | 'childGeoJson___internal___ignoreType'
-  | 'childGeoJson___internal___mediaType'
-  | 'childGeoJson___internal___owner'
-  | 'childGeoJson___internal___type'
-  | 'childGeoJson___type'
-  | 'childGeoJson___properties___nation'
-  | 'childGeoJson___geometry___type'
-  | 'childGeoJson___geometry___coordinates'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___frontmatter___continent___id'
-  | 'childMarkdownRemark___frontmatter___continent___children'
-  | 'childMarkdownRemark___frontmatter___continent___name'
-  | 'childMarkdownRemark___frontmatter___continent___type'
-  | 'childMarkdownRemark___frontmatter___continent___nations'
-  | 'childMarkdownRemark___frontmatter___continent___parentLocation'
-  | 'childMarkdownRemark___frontmatter___id___id'
-  | 'childMarkdownRemark___frontmatter___id___children'
-  | 'childMarkdownRemark___frontmatter___id___name'
-  | 'childMarkdownRemark___frontmatter___id___type'
-  | 'childMarkdownRemark___frontmatter___id___nations'
-  | 'childMarkdownRemark___frontmatter___id___parentLocation'
+  | 'childMarkdownRemark___frontmatter___world___id'
+  | 'childMarkdownRemark___frontmatter___world___children'
+  | 'childMarkdownRemark___frontmatter___world___name'
+  | 'childMarkdownRemark___frontmatter___date'
+  | 'childMarkdownRemark___frontmatter___inspiration'
   | 'childMarkdownRemark___frontmatter___template'
   | 'childMarkdownRemark___frontmatter___heroImage___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___heroImage___absolutePath'
@@ -1739,11 +1736,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___heroImage___publicURL'
   | 'childMarkdownRemark___frontmatter___heroImage___id'
   | 'childMarkdownRemark___frontmatter___heroImage___children'
-  | 'childMarkdownRemark___frontmatter___world___id'
-  | 'childMarkdownRemark___frontmatter___world___children'
-  | 'childMarkdownRemark___frontmatter___world___name'
-  | 'childMarkdownRemark___frontmatter___date'
-  | 'childMarkdownRemark___frontmatter___inspiration'
   | 'childMarkdownRemark___frontmatter___mapImage___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___mapImage___absolutePath'
   | 'childMarkdownRemark___frontmatter___mapImage___relativePath'
@@ -1780,6 +1772,18 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___mapImage___publicURL'
   | 'childMarkdownRemark___frontmatter___mapImage___id'
   | 'childMarkdownRemark___frontmatter___mapImage___children'
+  | 'childMarkdownRemark___frontmatter___continent___id'
+  | 'childMarkdownRemark___frontmatter___continent___children'
+  | 'childMarkdownRemark___frontmatter___continent___name'
+  | 'childMarkdownRemark___frontmatter___continent___nations'
+  | 'childMarkdownRemark___frontmatter___continent___type'
+  | 'childMarkdownRemark___frontmatter___continent___parentLocation'
+  | 'childMarkdownRemark___frontmatter___id___id'
+  | 'childMarkdownRemark___frontmatter___id___children'
+  | 'childMarkdownRemark___frontmatter___id___name'
+  | 'childMarkdownRemark___frontmatter___id___nations'
+  | 'childMarkdownRemark___frontmatter___id___type'
+  | 'childMarkdownRemark___frontmatter___id___parentLocation'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1876,8 +1880,8 @@ export type FileFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   childWorldJson?: Maybe<WorldJsonFilterInput>;
   childNationsJson?: Maybe<NationsJsonFilterInput>;
-  childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
   childGeoJson?: Maybe<GeoJsonFilterInput>;
+  childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -2031,7 +2035,9 @@ export type GeoJsonFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'type'
+  | 'properties___geoType'
   | 'properties___nation'
+  | 'properties___popupContent'
   | 'geometry___type'
   | 'geometry___coordinates';
 
@@ -2047,7 +2053,7 @@ export type GeoJsonFilterInput = {
 
 export type GeoJsonGeometry = {
   type?: Maybe<Scalars['String']>;
-  coordinates?: Maybe<Array<Maybe<Array<Maybe<Scalars['Int']>>>>>;
+  coordinates?: Maybe<Array<Maybe<Array<Maybe<Array<Maybe<Scalars['Int']>>>>>>>;
 };
 
 export type GeoJsonGeometryFilterInput = {
@@ -2065,11 +2071,15 @@ export type GeoJsonGroupConnection = {
 };
 
 export type GeoJsonProperties = {
+  geoType?: Maybe<Scalars['String']>;
   nation?: Maybe<Scalars['String']>;
+  popupContent?: Maybe<Scalars['String']>;
 };
 
 export type GeoJsonPropertiesFilterInput = {
+  geoType?: Maybe<StringQueryOperatorInput>;
   nation?: Maybe<StringQueryOperatorInput>;
+  popupContent?: Maybe<StringQueryOperatorInput>;
 };
 
 export type GeoJsonSortInput = {
@@ -2725,126 +2735,24 @@ export type MarkdownRemarkFields = {
 export type MarkdownRemarkFieldsEnum = 
   | 'id'
   | 'frontmatter___title'
-  | 'frontmatter___continent___id'
-  | 'frontmatter___continent___parent___id'
-  | 'frontmatter___continent___parent___children'
-  | 'frontmatter___continent___children'
-  | 'frontmatter___continent___children___id'
-  | 'frontmatter___continent___children___children'
-  | 'frontmatter___continent___internal___content'
-  | 'frontmatter___continent___internal___contentDigest'
-  | 'frontmatter___continent___internal___description'
-  | 'frontmatter___continent___internal___fieldOwners'
-  | 'frontmatter___continent___internal___ignoreType'
-  | 'frontmatter___continent___internal___mediaType'
-  | 'frontmatter___continent___internal___owner'
-  | 'frontmatter___continent___internal___type'
-  | 'frontmatter___continent___name'
-  | 'frontmatter___continent___fields___slug'
-  | 'frontmatter___continent___type'
-  | 'frontmatter___continent___map___sourceInstanceName'
-  | 'frontmatter___continent___map___absolutePath'
-  | 'frontmatter___continent___map___relativePath'
-  | 'frontmatter___continent___map___extension'
-  | 'frontmatter___continent___map___size'
-  | 'frontmatter___continent___map___prettySize'
-  | 'frontmatter___continent___map___modifiedTime'
-  | 'frontmatter___continent___map___accessTime'
-  | 'frontmatter___continent___map___changeTime'
-  | 'frontmatter___continent___map___birthTime'
-  | 'frontmatter___continent___map___root'
-  | 'frontmatter___continent___map___dir'
-  | 'frontmatter___continent___map___base'
-  | 'frontmatter___continent___map___ext'
-  | 'frontmatter___continent___map___name'
-  | 'frontmatter___continent___map___relativeDirectory'
-  | 'frontmatter___continent___map___dev'
-  | 'frontmatter___continent___map___mode'
-  | 'frontmatter___continent___map___nlink'
-  | 'frontmatter___continent___map___uid'
-  | 'frontmatter___continent___map___gid'
-  | 'frontmatter___continent___map___rdev'
-  | 'frontmatter___continent___map___ino'
-  | 'frontmatter___continent___map___atimeMs'
-  | 'frontmatter___continent___map___mtimeMs'
-  | 'frontmatter___continent___map___ctimeMs'
-  | 'frontmatter___continent___map___atime'
-  | 'frontmatter___continent___map___mtime'
-  | 'frontmatter___continent___map___ctime'
-  | 'frontmatter___continent___map___birthtime'
-  | 'frontmatter___continent___map___birthtimeMs'
-  | 'frontmatter___continent___map___blksize'
-  | 'frontmatter___continent___map___blocks'
-  | 'frontmatter___continent___map___publicURL'
-  | 'frontmatter___continent___map___id'
-  | 'frontmatter___continent___map___children'
-  | 'frontmatter___continent___nations'
-  | 'frontmatter___continent___nations___id'
-  | 'frontmatter___continent___nations___children'
-  | 'frontmatter___continent___nations___name'
-  | 'frontmatter___continent___nations___type'
-  | 'frontmatter___continent___nations___parentLocation'
-  | 'frontmatter___continent___parentLocation'
-  | 'frontmatter___id___id'
-  | 'frontmatter___id___parent___id'
-  | 'frontmatter___id___parent___children'
-  | 'frontmatter___id___children'
-  | 'frontmatter___id___children___id'
-  | 'frontmatter___id___children___children'
-  | 'frontmatter___id___internal___content'
-  | 'frontmatter___id___internal___contentDigest'
-  | 'frontmatter___id___internal___description'
-  | 'frontmatter___id___internal___fieldOwners'
-  | 'frontmatter___id___internal___ignoreType'
-  | 'frontmatter___id___internal___mediaType'
-  | 'frontmatter___id___internal___owner'
-  | 'frontmatter___id___internal___type'
-  | 'frontmatter___id___name'
-  | 'frontmatter___id___fields___slug'
-  | 'frontmatter___id___type'
-  | 'frontmatter___id___map___sourceInstanceName'
-  | 'frontmatter___id___map___absolutePath'
-  | 'frontmatter___id___map___relativePath'
-  | 'frontmatter___id___map___extension'
-  | 'frontmatter___id___map___size'
-  | 'frontmatter___id___map___prettySize'
-  | 'frontmatter___id___map___modifiedTime'
-  | 'frontmatter___id___map___accessTime'
-  | 'frontmatter___id___map___changeTime'
-  | 'frontmatter___id___map___birthTime'
-  | 'frontmatter___id___map___root'
-  | 'frontmatter___id___map___dir'
-  | 'frontmatter___id___map___base'
-  | 'frontmatter___id___map___ext'
-  | 'frontmatter___id___map___name'
-  | 'frontmatter___id___map___relativeDirectory'
-  | 'frontmatter___id___map___dev'
-  | 'frontmatter___id___map___mode'
-  | 'frontmatter___id___map___nlink'
-  | 'frontmatter___id___map___uid'
-  | 'frontmatter___id___map___gid'
-  | 'frontmatter___id___map___rdev'
-  | 'frontmatter___id___map___ino'
-  | 'frontmatter___id___map___atimeMs'
-  | 'frontmatter___id___map___mtimeMs'
-  | 'frontmatter___id___map___ctimeMs'
-  | 'frontmatter___id___map___atime'
-  | 'frontmatter___id___map___mtime'
-  | 'frontmatter___id___map___ctime'
-  | 'frontmatter___id___map___birthtime'
-  | 'frontmatter___id___map___birthtimeMs'
-  | 'frontmatter___id___map___blksize'
-  | 'frontmatter___id___map___blocks'
-  | 'frontmatter___id___map___publicURL'
-  | 'frontmatter___id___map___id'
-  | 'frontmatter___id___map___children'
-  | 'frontmatter___id___nations'
-  | 'frontmatter___id___nations___id'
-  | 'frontmatter___id___nations___children'
-  | 'frontmatter___id___nations___name'
-  | 'frontmatter___id___nations___type'
-  | 'frontmatter___id___nations___parentLocation'
-  | 'frontmatter___id___parentLocation'
+  | 'frontmatter___world___id'
+  | 'frontmatter___world___parent___id'
+  | 'frontmatter___world___parent___children'
+  | 'frontmatter___world___children'
+  | 'frontmatter___world___children___id'
+  | 'frontmatter___world___children___children'
+  | 'frontmatter___world___internal___content'
+  | 'frontmatter___world___internal___contentDigest'
+  | 'frontmatter___world___internal___description'
+  | 'frontmatter___world___internal___fieldOwners'
+  | 'frontmatter___world___internal___ignoreType'
+  | 'frontmatter___world___internal___mediaType'
+  | 'frontmatter___world___internal___owner'
+  | 'frontmatter___world___internal___type'
+  | 'frontmatter___world___name'
+  | 'frontmatter___world___geography___continents'
+  | 'frontmatter___date'
+  | 'frontmatter___inspiration'
   | 'frontmatter___template'
   | 'frontmatter___heroImage___sourceInstanceName'
   | 'frontmatter___heroImage___absolutePath'
@@ -2904,15 +2812,15 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___heroImage___childNationsJson___name'
   | 'frontmatter___heroImage___childNationsJson___type'
   | 'frontmatter___heroImage___childNationsJson___parentLocation'
-  | 'frontmatter___heroImage___childContinentsJson___id'
-  | 'frontmatter___heroImage___childContinentsJson___children'
-  | 'frontmatter___heroImage___childContinentsJson___name'
-  | 'frontmatter___heroImage___childContinentsJson___type'
-  | 'frontmatter___heroImage___childContinentsJson___nations'
-  | 'frontmatter___heroImage___childContinentsJson___parentLocation'
   | 'frontmatter___heroImage___childGeoJson___id'
   | 'frontmatter___heroImage___childGeoJson___children'
   | 'frontmatter___heroImage___childGeoJson___type'
+  | 'frontmatter___heroImage___childContinentsJson___id'
+  | 'frontmatter___heroImage___childContinentsJson___children'
+  | 'frontmatter___heroImage___childContinentsJson___name'
+  | 'frontmatter___heroImage___childContinentsJson___nations'
+  | 'frontmatter___heroImage___childContinentsJson___type'
+  | 'frontmatter___heroImage___childContinentsJson___parentLocation'
   | 'frontmatter___heroImage___childMarkdownRemark___id'
   | 'frontmatter___heroImage___childMarkdownRemark___excerpt'
   | 'frontmatter___heroImage___childMarkdownRemark___rawMarkdownBody'
@@ -2924,24 +2832,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___heroImage___childMarkdownRemark___timeToRead'
   | 'frontmatter___heroImage___childMarkdownRemark___tableOfContents'
   | 'frontmatter___heroImage___childMarkdownRemark___children'
-  | 'frontmatter___world___id'
-  | 'frontmatter___world___parent___id'
-  | 'frontmatter___world___parent___children'
-  | 'frontmatter___world___children'
-  | 'frontmatter___world___children___id'
-  | 'frontmatter___world___children___children'
-  | 'frontmatter___world___internal___content'
-  | 'frontmatter___world___internal___contentDigest'
-  | 'frontmatter___world___internal___description'
-  | 'frontmatter___world___internal___fieldOwners'
-  | 'frontmatter___world___internal___ignoreType'
-  | 'frontmatter___world___internal___mediaType'
-  | 'frontmatter___world___internal___owner'
-  | 'frontmatter___world___internal___type'
-  | 'frontmatter___world___name'
-  | 'frontmatter___world___geography___continents'
-  | 'frontmatter___date'
-  | 'frontmatter___inspiration'
   | 'frontmatter___mapImage___sourceInstanceName'
   | 'frontmatter___mapImage___absolutePath'
   | 'frontmatter___mapImage___relativePath'
@@ -3000,15 +2890,15 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___mapImage___childNationsJson___name'
   | 'frontmatter___mapImage___childNationsJson___type'
   | 'frontmatter___mapImage___childNationsJson___parentLocation'
-  | 'frontmatter___mapImage___childContinentsJson___id'
-  | 'frontmatter___mapImage___childContinentsJson___children'
-  | 'frontmatter___mapImage___childContinentsJson___name'
-  | 'frontmatter___mapImage___childContinentsJson___type'
-  | 'frontmatter___mapImage___childContinentsJson___nations'
-  | 'frontmatter___mapImage___childContinentsJson___parentLocation'
   | 'frontmatter___mapImage___childGeoJson___id'
   | 'frontmatter___mapImage___childGeoJson___children'
   | 'frontmatter___mapImage___childGeoJson___type'
+  | 'frontmatter___mapImage___childContinentsJson___id'
+  | 'frontmatter___mapImage___childContinentsJson___children'
+  | 'frontmatter___mapImage___childContinentsJson___name'
+  | 'frontmatter___mapImage___childContinentsJson___nations'
+  | 'frontmatter___mapImage___childContinentsJson___type'
+  | 'frontmatter___mapImage___childContinentsJson___parentLocation'
   | 'frontmatter___mapImage___childMarkdownRemark___id'
   | 'frontmatter___mapImage___childMarkdownRemark___excerpt'
   | 'frontmatter___mapImage___childMarkdownRemark___rawMarkdownBody'
@@ -3020,6 +2910,126 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___mapImage___childMarkdownRemark___timeToRead'
   | 'frontmatter___mapImage___childMarkdownRemark___tableOfContents'
   | 'frontmatter___mapImage___childMarkdownRemark___children'
+  | 'frontmatter___continent___id'
+  | 'frontmatter___continent___parent___id'
+  | 'frontmatter___continent___parent___children'
+  | 'frontmatter___continent___children'
+  | 'frontmatter___continent___children___id'
+  | 'frontmatter___continent___children___children'
+  | 'frontmatter___continent___internal___content'
+  | 'frontmatter___continent___internal___contentDigest'
+  | 'frontmatter___continent___internal___description'
+  | 'frontmatter___continent___internal___fieldOwners'
+  | 'frontmatter___continent___internal___ignoreType'
+  | 'frontmatter___continent___internal___mediaType'
+  | 'frontmatter___continent___internal___owner'
+  | 'frontmatter___continent___internal___type'
+  | 'frontmatter___continent___name'
+  | 'frontmatter___continent___map___sourceInstanceName'
+  | 'frontmatter___continent___map___absolutePath'
+  | 'frontmatter___continent___map___relativePath'
+  | 'frontmatter___continent___map___extension'
+  | 'frontmatter___continent___map___size'
+  | 'frontmatter___continent___map___prettySize'
+  | 'frontmatter___continent___map___modifiedTime'
+  | 'frontmatter___continent___map___accessTime'
+  | 'frontmatter___continent___map___changeTime'
+  | 'frontmatter___continent___map___birthTime'
+  | 'frontmatter___continent___map___root'
+  | 'frontmatter___continent___map___dir'
+  | 'frontmatter___continent___map___base'
+  | 'frontmatter___continent___map___ext'
+  | 'frontmatter___continent___map___name'
+  | 'frontmatter___continent___map___relativeDirectory'
+  | 'frontmatter___continent___map___dev'
+  | 'frontmatter___continent___map___mode'
+  | 'frontmatter___continent___map___nlink'
+  | 'frontmatter___continent___map___uid'
+  | 'frontmatter___continent___map___gid'
+  | 'frontmatter___continent___map___rdev'
+  | 'frontmatter___continent___map___ino'
+  | 'frontmatter___continent___map___atimeMs'
+  | 'frontmatter___continent___map___mtimeMs'
+  | 'frontmatter___continent___map___ctimeMs'
+  | 'frontmatter___continent___map___atime'
+  | 'frontmatter___continent___map___mtime'
+  | 'frontmatter___continent___map___ctime'
+  | 'frontmatter___continent___map___birthtime'
+  | 'frontmatter___continent___map___birthtimeMs'
+  | 'frontmatter___continent___map___blksize'
+  | 'frontmatter___continent___map___blocks'
+  | 'frontmatter___continent___map___publicURL'
+  | 'frontmatter___continent___map___id'
+  | 'frontmatter___continent___map___children'
+  | 'frontmatter___continent___nations'
+  | 'frontmatter___continent___nations___id'
+  | 'frontmatter___continent___nations___children'
+  | 'frontmatter___continent___nations___name'
+  | 'frontmatter___continent___nations___type'
+  | 'frontmatter___continent___nations___parentLocation'
+  | 'frontmatter___continent___fields___slug'
+  | 'frontmatter___continent___type'
+  | 'frontmatter___continent___parentLocation'
+  | 'frontmatter___id___id'
+  | 'frontmatter___id___parent___id'
+  | 'frontmatter___id___parent___children'
+  | 'frontmatter___id___children'
+  | 'frontmatter___id___children___id'
+  | 'frontmatter___id___children___children'
+  | 'frontmatter___id___internal___content'
+  | 'frontmatter___id___internal___contentDigest'
+  | 'frontmatter___id___internal___description'
+  | 'frontmatter___id___internal___fieldOwners'
+  | 'frontmatter___id___internal___ignoreType'
+  | 'frontmatter___id___internal___mediaType'
+  | 'frontmatter___id___internal___owner'
+  | 'frontmatter___id___internal___type'
+  | 'frontmatter___id___name'
+  | 'frontmatter___id___map___sourceInstanceName'
+  | 'frontmatter___id___map___absolutePath'
+  | 'frontmatter___id___map___relativePath'
+  | 'frontmatter___id___map___extension'
+  | 'frontmatter___id___map___size'
+  | 'frontmatter___id___map___prettySize'
+  | 'frontmatter___id___map___modifiedTime'
+  | 'frontmatter___id___map___accessTime'
+  | 'frontmatter___id___map___changeTime'
+  | 'frontmatter___id___map___birthTime'
+  | 'frontmatter___id___map___root'
+  | 'frontmatter___id___map___dir'
+  | 'frontmatter___id___map___base'
+  | 'frontmatter___id___map___ext'
+  | 'frontmatter___id___map___name'
+  | 'frontmatter___id___map___relativeDirectory'
+  | 'frontmatter___id___map___dev'
+  | 'frontmatter___id___map___mode'
+  | 'frontmatter___id___map___nlink'
+  | 'frontmatter___id___map___uid'
+  | 'frontmatter___id___map___gid'
+  | 'frontmatter___id___map___rdev'
+  | 'frontmatter___id___map___ino'
+  | 'frontmatter___id___map___atimeMs'
+  | 'frontmatter___id___map___mtimeMs'
+  | 'frontmatter___id___map___ctimeMs'
+  | 'frontmatter___id___map___atime'
+  | 'frontmatter___id___map___mtime'
+  | 'frontmatter___id___map___ctime'
+  | 'frontmatter___id___map___birthtime'
+  | 'frontmatter___id___map___birthtimeMs'
+  | 'frontmatter___id___map___blksize'
+  | 'frontmatter___id___map___blocks'
+  | 'frontmatter___id___map___publicURL'
+  | 'frontmatter___id___map___id'
+  | 'frontmatter___id___map___children'
+  | 'frontmatter___id___nations'
+  | 'frontmatter___id___nations___id'
+  | 'frontmatter___id___nations___children'
+  | 'frontmatter___id___nations___name'
+  | 'frontmatter___id___nations___type'
+  | 'frontmatter___id___nations___parentLocation'
+  | 'frontmatter___id___fields___slug'
+  | 'frontmatter___id___type'
+  | 'frontmatter___id___parentLocation'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -3147,14 +3157,14 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
-  continent?: Maybe<ContinentsJson>;
-  id?: Maybe<ContinentsJson>;
-  template?: Maybe<Scalars['String']>;
-  heroImage?: Maybe<File>;
   world?: Maybe<WorldJson>;
   date?: Maybe<Scalars['Date']>;
   inspiration?: Maybe<Scalars['String']>;
+  template?: Maybe<Scalars['String']>;
+  heroImage?: Maybe<File>;
   mapImage?: Maybe<File>;
+  continent?: Maybe<ContinentsJson>;
+  id?: Maybe<ContinentsJson>;
 };
 
 
@@ -3167,14 +3177,14 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  continent?: Maybe<ContinentsJsonFilterInput>;
-  id?: Maybe<ContinentsJsonFilterInput>;
-  template?: Maybe<StringQueryOperatorInput>;
-  heroImage?: Maybe<FileFilterInput>;
   world?: Maybe<WorldJsonFilterInput>;
   date?: Maybe<DateQueryOperatorInput>;
   inspiration?: Maybe<StringQueryOperatorInput>;
+  template?: Maybe<StringQueryOperatorInput>;
+  heroImage?: Maybe<FileFilterInput>;
   mapImage?: Maybe<FileFilterInput>;
+  continent?: Maybe<ContinentsJsonFilterInput>;
+  id?: Maybe<ContinentsJsonFilterInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -3539,6 +3549,26 @@ export type NationsJsonFieldsEnum =
   | 'map___childNationsJson___map___publicURL'
   | 'map___childNationsJson___map___id'
   | 'map___childNationsJson___map___children'
+  | 'map___childGeoJson___id'
+  | 'map___childGeoJson___parent___id'
+  | 'map___childGeoJson___parent___children'
+  | 'map___childGeoJson___children'
+  | 'map___childGeoJson___children___id'
+  | 'map___childGeoJson___children___children'
+  | 'map___childGeoJson___internal___content'
+  | 'map___childGeoJson___internal___contentDigest'
+  | 'map___childGeoJson___internal___description'
+  | 'map___childGeoJson___internal___fieldOwners'
+  | 'map___childGeoJson___internal___ignoreType'
+  | 'map___childGeoJson___internal___mediaType'
+  | 'map___childGeoJson___internal___owner'
+  | 'map___childGeoJson___internal___type'
+  | 'map___childGeoJson___type'
+  | 'map___childGeoJson___properties___geoType'
+  | 'map___childGeoJson___properties___nation'
+  | 'map___childGeoJson___properties___popupContent'
+  | 'map___childGeoJson___geometry___type'
+  | 'map___childGeoJson___geometry___coordinates'
   | 'map___childContinentsJson___id'
   | 'map___childContinentsJson___parent___id'
   | 'map___childContinentsJson___parent___children'
@@ -3554,8 +3584,6 @@ export type NationsJsonFieldsEnum =
   | 'map___childContinentsJson___internal___owner'
   | 'map___childContinentsJson___internal___type'
   | 'map___childContinentsJson___name'
-  | 'map___childContinentsJson___fields___slug'
-  | 'map___childContinentsJson___type'
   | 'map___childContinentsJson___map___sourceInstanceName'
   | 'map___childContinentsJson___map___absolutePath'
   | 'map___childContinentsJson___map___relativePath'
@@ -3598,30 +3626,14 @@ export type NationsJsonFieldsEnum =
   | 'map___childContinentsJson___nations___name'
   | 'map___childContinentsJson___nations___type'
   | 'map___childContinentsJson___nations___parentLocation'
+  | 'map___childContinentsJson___fields___slug'
+  | 'map___childContinentsJson___type'
   | 'map___childContinentsJson___parentLocation'
-  | 'map___childGeoJson___id'
-  | 'map___childGeoJson___parent___id'
-  | 'map___childGeoJson___parent___children'
-  | 'map___childGeoJson___children'
-  | 'map___childGeoJson___children___id'
-  | 'map___childGeoJson___children___children'
-  | 'map___childGeoJson___internal___content'
-  | 'map___childGeoJson___internal___contentDigest'
-  | 'map___childGeoJson___internal___description'
-  | 'map___childGeoJson___internal___fieldOwners'
-  | 'map___childGeoJson___internal___ignoreType'
-  | 'map___childGeoJson___internal___mediaType'
-  | 'map___childGeoJson___internal___owner'
-  | 'map___childGeoJson___internal___type'
-  | 'map___childGeoJson___type'
-  | 'map___childGeoJson___properties___nation'
-  | 'map___childGeoJson___geometry___type'
-  | 'map___childGeoJson___geometry___coordinates'
   | 'map___childMarkdownRemark___id'
   | 'map___childMarkdownRemark___frontmatter___title'
-  | 'map___childMarkdownRemark___frontmatter___template'
   | 'map___childMarkdownRemark___frontmatter___date'
   | 'map___childMarkdownRemark___frontmatter___inspiration'
+  | 'map___childMarkdownRemark___frontmatter___template'
   | 'map___childMarkdownRemark___excerpt'
   | 'map___childMarkdownRemark___rawMarkdownBody'
   | 'map___childMarkdownRemark___fileAbsolutePath'
@@ -3743,10 +3755,10 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  geoJson?: Maybe<GeoJson>;
-  allGeoJson: GeoJsonConnection;
   continentsJson?: Maybe<ContinentsJson>;
   allContinentsJson: ContinentsJsonConnection;
+  geoJson?: Maybe<GeoJson>;
+  allGeoJson: GeoJsonConnection;
   worldJson?: Maybe<WorldJson>;
   allWorldJson: WorldJsonConnection;
   nationsJson?: Maybe<NationsJson>;
@@ -3800,8 +3812,8 @@ export type QueryFileArgs = {
   internal?: Maybe<InternalFilterInput>;
   childWorldJson?: Maybe<WorldJsonFilterInput>;
   childNationsJson?: Maybe<NationsJsonFilterInput>;
-  childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
   childGeoJson?: Maybe<GeoJsonFilterInput>;
+  childContinentsJson?: Maybe<ContinentsJsonFilterInput>;
   childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
@@ -3892,6 +3904,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   mapping?: Maybe<SiteMappingFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -3960,6 +3974,28 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryContinentsJsonArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  map?: Maybe<FileFilterInput>;
+  nations?: Maybe<NationsJsonFilterListInput>;
+  fields?: Maybe<ContinentsJsonFieldsFilterInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+  parentLocation?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllContinentsJsonArgs = {
+  filter?: Maybe<ContinentsJsonFilterInput>;
+  sort?: Maybe<ContinentsJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryGeoJsonArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -3974,28 +4010,6 @@ export type QueryGeoJsonArgs = {
 export type QueryAllGeoJsonArgs = {
   filter?: Maybe<GeoJsonFilterInput>;
   sort?: Maybe<GeoJsonSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-
-export type QueryContinentsJsonArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  name?: Maybe<StringQueryOperatorInput>;
-  fields?: Maybe<ContinentsJsonFieldsFilterInput>;
-  type?: Maybe<StringQueryOperatorInput>;
-  map?: Maybe<FileFilterInput>;
-  nations?: Maybe<NationsJsonFilterListInput>;
-  parentLocation?: Maybe<StringQueryOperatorInput>;
-};
-
-
-export type QueryAllContinentsJsonArgs = {
-  filter?: Maybe<ContinentsJsonFilterInput>;
-  sort?: Maybe<ContinentsJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -4083,6 +4097,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Date']>;
+  host?: Maybe<Scalars['String']>;
   mapping?: Maybe<SiteMapping>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
@@ -4094,6 +4110,14 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -4286,6 +4310,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
+  | 'port'
+  | 'host'
   | 'mapping___MarkdownRemark_frontmatter_id'
   | 'mapping___MarkdownRemark_frontmatter_world'
   | 'mapping___MarkdownRemark_frontmatter_continent'
@@ -4383,6 +4409,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   mapping?: Maybe<SiteMappingFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
@@ -4615,6 +4643,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___maxWidth'
+  | 'pluginCreator___pluginOptions___pathPrefix'
+  | 'pluginCreator___pluginOptions___wrapperStyle'
+  | 'pluginCreator___pluginOptions___backgroundColor'
+  | 'pluginCreator___pluginOptions___linkImagesToOriginal'
+  | 'pluginCreator___pluginOptions___showCaptions'
+  | 'pluginCreator___pluginOptions___markdownCaptions'
+  | 'pluginCreator___pluginOptions___withWebp'
+  | 'pluginCreator___pluginOptions___tracedSVG'
+  | 'pluginCreator___pluginOptions___loading'
+  | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
+  | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
@@ -4821,12 +4860,34 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___name'
   | 'pluginOptions___plugins___version'
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
+  | 'pluginOptions___plugins___pluginOptions___pathPrefix'
+  | 'pluginOptions___plugins___pluginOptions___wrapperStyle'
+  | 'pluginOptions___plugins___pluginOptions___backgroundColor'
+  | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
+  | 'pluginOptions___plugins___pluginOptions___showCaptions'
+  | 'pluginOptions___plugins___pluginOptions___markdownCaptions'
+  | 'pluginOptions___plugins___pluginOptions___withWebp'
+  | 'pluginOptions___plugins___pluginOptions___tracedSVG'
+  | 'pluginOptions___plugins___pluginOptions___loading'
+  | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
+  | 'pluginOptions___plugins___pluginOptions___disableBgImage'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___fileName'
   | 'pluginOptions___documentPaths'
   | 'pluginOptions___path'
   | 'pluginOptions___maxWidth'
+  | 'pluginOptions___pathPrefix'
+  | 'pluginOptions___wrapperStyle'
+  | 'pluginOptions___backgroundColor'
+  | 'pluginOptions___linkImagesToOriginal'
+  | 'pluginOptions___showCaptions'
+  | 'pluginOptions___markdownCaptions'
+  | 'pluginOptions___withWebp'
+  | 'pluginOptions___tracedSVG'
+  | 'pluginOptions___loading'
+  | 'pluginOptions___disableBgImageOnAlpha'
+  | 'pluginOptions___disableBgImage'
   | 'pluginOptions___name'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
@@ -4960,6 +5021,17 @@ export type SitePluginPluginOptions = {
   documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   path?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
+  pathPrefix?: Maybe<Scalars['String']>;
+  wrapperStyle?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
@@ -4981,6 +5053,17 @@ export type SitePluginPluginOptionsFilterInput = {
   documentPaths?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  wrapperStyle?: Maybe<StringQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
@@ -5022,10 +5105,32 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
+  pathPrefix?: Maybe<Scalars['String']>;
+  wrapperStyle?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  wrapperStyle?: Maybe<StringQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -5203,8 +5308,6 @@ export type WorldJsonFieldsEnum =
   | 'geography___continents___internal___owner'
   | 'geography___continents___internal___type'
   | 'geography___continents___name'
-  | 'geography___continents___fields___slug'
-  | 'geography___continents___type'
   | 'geography___continents___map___sourceInstanceName'
   | 'geography___continents___map___absolutePath'
   | 'geography___continents___map___relativePath'
@@ -5247,6 +5350,8 @@ export type WorldJsonFieldsEnum =
   | 'geography___continents___nations___name'
   | 'geography___continents___nations___type'
   | 'geography___continents___nations___parentLocation'
+  | 'geography___continents___fields___slug'
+  | 'geography___continents___type'
   | 'geography___continents___parentLocation';
 
 export type WorldJsonFilterInput = {
@@ -5295,7 +5400,10 @@ export type ContinentPageQueryVariables = Exact<{
 }>;
 
 
-export type ContinentPageQuery = { markdownRemark?: Maybe<(
+export type ContinentPageQuery = { allGeoJson: { edges: Array<{ node: (
+        Pick<GeoJson, 'type'>
+        & { properties?: Maybe<Pick<GeoJsonProperties, 'geoType' | 'nation' | 'popupContent'>>, geometry?: Maybe<Pick<GeoJsonGeometry, 'coordinates' | 'type'>> }
+      ) }> }, markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { frontmatter?: Maybe<(
       Pick<MarkdownRemarkFrontmatter, 'title'>

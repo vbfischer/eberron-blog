@@ -1,4 +1,6 @@
 {
   "name": "Argonnessen",
-  "id": "argonnessen"
+  "id": "argonnessen",
+  "map": "../../images/Khorvaire.png",
+  "nations": []
 }

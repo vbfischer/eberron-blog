@@ -9,3 +9,5 @@ export {
 } from "./SideBarContainer"
 
 export { default as Map } from "./Map"
+export { default as HoveredLabel } from "./HoveredLabel"
+export { default as NavStrip } from "./NavStrip"

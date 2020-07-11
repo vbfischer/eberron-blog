@@ -10,14 +10,18 @@ import {
   SidebarContainer,
   SidebarTopContainer,
   Map,
+  HoveredLabel,
 } from "components"
 import { TwoColumnLayout } from "layouts"
+import { MapContextProvider } from "context/MapContext"
 
 type ContinentPageProps = {
   data: ContinentPageQuery
 }
 
 const ContinentPage = ({ data }: ContinentPageProps) => {
+  const geoJSON = data.allGeoJson.edges.map(e => e.node)
+
   const frontmatter = data?.markdownRemark?.frontmatter
 
   const html = data?.markdownRemark?.html ?? ""
@@ -26,7 +30,7 @@ const ContinentPage = ({ data }: ContinentPageProps) => {
 
   const nations = frontmatter?.continent?.nations || []
   const map = frontmatter?.continent?.map?.childImageSharp?.original
-  console.log("map", map)
+
   const nationList = nations.map(n => <li key={n?.id}>{n?.name}</li>)
   return (
     <>
@@ -39,13 +43,16 @@ const ContinentPage = ({ data }: ContinentPageProps) => {
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </CenteredContainer>
         <SidebarContainer>
-          <SidebarTopContainer>
-            <Map url={map.src} />
-            <h3>Type</h3>
-            <p>Continent</p>
-            <h3>Nations</h3>
-            <ul>{nationList}</ul>
-          </SidebarTopContainer>
+          <MapContextProvider>
+            <SidebarTopContainer>
+              <Map url={map.src} geoJSON={geoJSON} />
+              <HoveredLabel />
+              <h3>Type</h3>
+              <p>Continent</p>
+              <h3>Nations</h3>
+              <ul>{nationList}</ul>
+            </SidebarTopContainer>
+          </MapContextProvider>
         </SidebarContainer>
       </TwoColumnLayout>
     </>
@@ -56,6 +63,22 @@ export default ContinentPage
 
 export const query = graphql`
   query ContinentPage($slug: String!) {
+    allGeoJson(filter: { properties: { geoType: { eq: "nation" } } }) {
+      edges {
+        node {
+          type
+          properties {
+            geoType
+            nation
+            popupContent
+          }
+          geometry {
+            coordinates
+            type
+          }
+        }
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

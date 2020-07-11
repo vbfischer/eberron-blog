@@ -24,6 +24,24 @@ module.exports = function (plop) {
       },
     ],
   }),
+    plop.setGenerator("Nation GEO", {
+      description: "setup geo file for nation",
+      prompts: [
+        {
+          type: "input",
+          name: "name",
+          message: "nation",
+        },
+      ],
+      actions: [
+        {
+          type: "add",
+          skipIfExists: true,
+          path: "src/data/geo/{{dashCase name}}.json",
+          templateFile: "__plop-templates/nation-geo-file.json",
+        },
+      ],
+    }),
     plop.setGenerator("nations", {
       description: "application controller logic",
       prompts: [
