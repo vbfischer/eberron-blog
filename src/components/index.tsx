@@ -8,6 +8,7 @@ export {
   SidebarTopContainer,
 } from "./SideBarContainer"
 
-export { default as Map } from "./Map"
+export { Map, ContinentMapContainer, MapLayer, GeoLayer } from "./map"
+
 export { default as HoveredLabel } from "./HoveredLabel"
 export { default as NavStrip } from "./NavStrip"

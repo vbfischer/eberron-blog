@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
-import { MapContext } from "context/MapContext"
+import React from "react"
+import { useMapState } from "context/MapContext"
 
 export default () => {
-  const { state } = useContext(MapContext)
+  const state = useMapState()
 
   return <div>{state.hovered}</div>
 }
