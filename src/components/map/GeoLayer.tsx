@@ -1,7 +1,12 @@
 import React from "react"
+import { GeoJSON } from "react-leaflet"
 
 const GeoLayer = () => {
-  return <h1>Geo Layer</h1>
+  return (
+    <>
+      <GeoJSON />
+    </>
+  )
 }
 
 export { GeoLayer }

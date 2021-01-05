@@ -1,4 +1,4 @@
-import React, { useReducer, Dispatch, useContext } from "react"
+import React, { useReducer, Dispatch } from "react"
 import { createAction, createReducer, ActionType } from "typesafe-actions"
 import { createSelector } from "reselect"
 
@@ -12,6 +12,14 @@ type MapState = {
   mapCtx: LeafletContext
 }
 
+/**
+ *
+ * A helper to create a Context and Provider with no upfront default value, and
+ * without having to check for undefined all the time.
+ *
+ * see:
+ * https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#context
+ */
 function createCtx<A extends {} | null>() {
   const ctx = React.createContext<A | undefined>(undefined)
   function useCtx() {
@@ -23,12 +31,14 @@ function createCtx<A extends {} | null>() {
   return [useCtx, ctx.Provider] as const // 'as const' makes TypeScript infer a tuple
 }
 
+// Create the contexts
 const [useMapState, MapCtxProvider] = createCtx<MapState>()
 
 const [useMapDispatch, MapDispatchContextProvider] = createCtx<
   Dispatch<ActionType<typeof actions>>
 >()
 
+// Create the Actions
 const actions = {
   hover: createAction("map/HOVER")<string>(),
   imageSize: createAction("map/IMAGE_SIZE")<ImageSizeTuple>(),
@@ -37,6 +47,7 @@ const actions = {
 
 const initialState = {}
 
+// The reducer
 const reducer = createReducer(initialState)
   .handleAction(
     actions.hover,
@@ -60,6 +71,7 @@ const reducer = createReducer(initialState)
     })
   )
 
+// Combine the two providers into one for simplicity
 const MapContextProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
@@ -71,6 +83,7 @@ const MapContextProvider = ({ children }: any) => {
   )
 }
 
+// Selector functions
 const getHover = (state: MapState) => state.hovered
 const getImageSize = (state: MapState) => state.imageSize
 const getLeafletContext = (state: MapState) => state.mapCtx

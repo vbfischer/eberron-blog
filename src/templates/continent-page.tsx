@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { ContinentPageQuery } from "types/gatsby-graphql"
+import { ContinentPageQuery, ImageSharp, NationsJson } from "types/gatsby-graphql"
 
 import {
   SEO,
@@ -17,30 +17,58 @@ import {
 } from "components"
 import { TwoColumnLayout } from "layouts"
 import { MapContextProvider } from "context/MapContext"
-import { AttributionControl, GeoJSON, ImageOverlay } from "react-leaflet"
-import { ImageSizeTuple } from "components/map/Map"
+import { AttributionControl, GeoJSON } from "react-leaflet"
 
 type ContinentPageProps = {
   data: ContinentPageQuery
 }
 
-const imageSize: ImageSizeTuple = [3548, 5033]
+type ImageProps = {
+  childImageSharp: ImageSharp
+}
+
+type DataProps = {
+  title: string
+  heroImage: ImageProps
+  continent: {
+    nations: any
+    map: {
+      childImageSharp: {
+        fixed: {
+          src: string
+          width: number
+          height: number
+        }
+      }
+    }
+  }
+}
 
 const ContinentPage = ({ data }: ContinentPageProps) => {
+  console.log("DATA", data)
+
   const geoJSON = data.allGeoJson.edges.map(e => e.node)
+
   const attribution = `<a href="https://www.google.com">Open Full Map</a>`
 
-  const frontmatter = data?.markdownRemark?.frontmatter
+  const {
+    title,
+    heroImage: {
+      childImageSharp: { fluid: heroImageFluid },
+    },
+    continent: {
+      nations,
+      map: {
+        childImageSharp: {
+          fixed: { src, height, width },
+        },
+      },
+    },
+  } = data!.markdownRemark!.frontmatter as DataProps
 
-  const html = data?.markdownRemark?.html ?? ""
-  const title: string = frontmatter?.title || " "
-  const heroImageFluid = frontmatter?.heroImage?.childImageSharp?.fluid
+  const html = data!.markdownRemark!.html ?? ""
 
-  const nations = frontmatter?.continent?.nations || []
-  const map = frontmatter?.continent?.map?.childImageSharp?.original
-
-  const { src, height, width }: any = map
-  const nationList = nations.map(n => <li key={n?.id}>{n?.name}</li>)
+  const nationList = nations.map(n: NationsJson => <li key={n!.id}>{n!.name}</li>)
 
   const doEachFeature = (feature: any, layer: any) => {
     layer.bindPopup(feature?.properties?.popupContent)
@@ -111,19 +139,16 @@ export const query = graphql`
                 width
                 src
               }
+              fixed(pngCompressionSpeed: 10, width: 5033) {
+                width
+                src
+                height
+                aspectRatio
+              }
             }
           }
         }
         heroImage {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        mapImage {
-          id
-          absolutePath
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
